@@ -1,0 +1,94 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="position">
+    <th mat-header-cell class="form-field" *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let element; let i = index"> <span>{{i+1}}</span> </td>
+  </ng-container>
+
+  <ng-container matColumnDef="enrollmentid">
+    <th mat-header-cell *matHeaderCellDef> EnrollmentID </th>
+    <td mat-cell *matCellDef="let element"><span> {{element.enrollmentID}} </span></td>
+  </ng-container>
+  <!-- Name Column -->
+  <ng-container matColumnDef="course">
+    <th mat-header-cell *matHeaderCellDef> Course </th>
+    <td mat-cell *matCellDef="let element"><span> {{element.courseID}} </span></td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="EnrolledOn">
+    <th mat-header-cell *matHeaderCellDef> EnrolledOn </th>
+    <td mat-cell *matCellDef="let element"><span>{{element.enrolledDate | date: 'dd/MM/yyyy'}}</span> </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="Status">
+    <th mat-header-cell *matHeaderCellDef class="head"> Status </th>
+    <td mat-cell *matCellDef="let element"> <span>{{element.enrollmentStatus}} </span></td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="Approved">
+    <th mat-header-cell *matHeaderCellDef>
+      <div *ngIf="!userid">Approved</div>
+      <div *ngIf="userid">Approve</div>
+    </th>
+    <td mat-cell *matCellDef="let element">
+      <div *ngIf="(element.enrollmentStatus == 'Approved' || element.enrollmentStatus == 'Certified' ) && !userid">
+        <span>
+          <img src="https://www.freepnglogos.com/uploads/tick-png/image-tick-mark-icon-png-good-luck-charlie-wiki-2.png"
+            width="28px" alt="image tick mark " />
+        </span>
+      </div>
+      <div *ngIf="element.enrollmentStatus == 'Rejected' && !userid">
+        <span>
+          <img src="https://www.freeiconspng.com/uploads/red-cross-png-33.png" width="29px" alt="red cross png" />
+        </span>
+      </div>
+      <!-- <div *ngIf="element.enrollmentStatus == 'Waiting for Approval' && !userid">
+        <span>
+          <img src="https://www.clipartmax.com/png/middle/289-2891221_721x721px-waiting-for-approval-icon.png" width="29px" alt="red cross png" />
+        </span>
+      </div> -->
+      <div *ngIf="element.enrollmentStatus == 'Waiting for Approval' && userid" class="icons row">
+        <span>
+          <button mat-mini-fab class="fabbtngreen" (click)="updateenrollmentstatus('Approved',element.enrollmentID )">
+            <mat-icon>check</mat-icon>
+          </button>
+        </span>&nbsp;
+        <span>
+          <button mat-mini-fab class="fabbtn" (click)="updateenrollmentstatus('Rejected', element.enrollmentID)">
+            <mat-icon>close</mat-icon>
+          </button>
+        </span>
+      </div>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Cerificate">
+    <th mat-header-cell *matHeaderCellDef> Cerificate </th>
+    <td mat-cell *matCellDef="let element">
+      <div *ngIf="element.certificationID">
+        <span class="hoverstyle" (click)="downloadcert(element.certificationID)">
+           {{element.certificationID}}
+        </span>
+      </div>
+      <div *ngIf="!element.certificationID && element.enrollmentStatus == 'Approved' && userid">
+        <span><button class="generatebtn" (click)="generatecertID(element.enrollmentID, element.courseShortForm)">Generate</button></span>
+      </div>
+      <div *ngIf="!element.certificationID && !userid && element.enrollmentStatus != 'Rejected'">
+        <span>Not Yet Generated</span>
+      </div>
+      <div *ngIf="!element.certificationID && element.enrollmentStatus == 'Rejected'">
+        <span>Rejected</span>
+      </div>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

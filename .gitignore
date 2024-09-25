@@ -1,0 +1,145 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Compiled output
+/sitUI/dist
+/tmp
+/out-tsc
+/bazel-out
+/sitUI/npm-debug.log
+/sitUI/out-tsc
+/sitUI/bazel-out
+
+# Node
+/sitUI/node_modules
+npm-debug.log
+yarn-error.log
+/sitUI/npm-debug.log
+/sitUI/yarn-error.log
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Miscellaneous
+/sitUI/.angular/cache
+/sitUI/.sass-cache/
+/connect.lock
+/sitUI/coverage
+/sitUI/libpeerconnection.log
+/sitUI/testem.log
+/sitUI/typings
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+# System files
+.DS_Store
+Thumbs.db
+
+#flask ignore
+
+# Byte-compiled / optimized / DLL files
+sit_be/__pycache__/
+sit_be/*.py[cod]
+sit_be/*$py.class
+
+# C extensions
+sit_be/*.so
+
+# Distribution / packaging
+sit_be/.Python
+sit_be/env/
+sit_be/build/
+sit_be/develop-eggs/
+sit_be/dist/
+sit_be/downloads/
+sit_be/eggs/
+sit_be/.eggs/
+sit_be/lib/
+sit_be/lib64/
+sit_be/parts/
+sit_be/sdist/
+sit_be/var/
+sit_be/*.egg-info/
+sit_be/.installed.cfg
+sit_be/*.egg
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+sit_be/*.manifest
+sit_be/*.spec
+
+# Installer logs
+sit_be/pip-log.txt
+sit_be/pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+sit_be/htmlcov/
+sit_be/.tox/
+sit_be/.coverage
+sit_be/.coverage.*
+sit_be/.cache
+sit_be/nosetests.xml
+sit_be/coverage.xml
+sit_be/*,cover
+sit_be/.hypothesis/
+
+# Translations
+sit_be/*.mo
+sit_be/*.pot
+
+# Django stuff:
+sit_be/*.log
+sit_be/local_settings.py
+
+# Flask stuff:
+sit_be/instance/
+sit_be/.webassets-cache
+
+# Scrapy stuff:
+sit_be/.scrapy
+
+# Sphinx documentation
+sit_be/docs/_build/
+
+# PyBuilder
+sit_be/target/
+
+# IPython Notebook
+sit_be/.ipynb_checkpoints
+
+# pyenv
+sit_be/.python-version
+
+# celery beat schedule file
+sit_be/celerybeat-schedule
+
+# dotenv
+sit_be/.env
+
+# virtualenv
+sit_be/venv/
+sit_be/ENV/
+
+# Spyder project settings
+sit_be/.spyderproject
+
+# Rope project settings
+sit_be/.ropeproject

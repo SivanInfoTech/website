@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+body { margin: 0; font-family: 'Arial', sans-serif !important;
+  width: 100vw;
+  overflow-x: hidden;
+  left: 0}
+  @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+  
+  
+  
+  @media (max-width: 768px) {
+      /* Font sizes for tablets and larger screens */
+      html {
+        font-size: 12px;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      /* Font sizes for tablets and larger screens */
+      html {
+        font-size: 15px;
+      }
+    }
+    
+    @media (min-width: 1200px) and (min-height: 700px) {
+      /* Font sizes for tablets and larger screens */
+      html {
+        font-size: 20px;
+      }
+    }
+  
+    @media (min-width: 1200px) and (min-height: 700px) {
+      /* Font sizes for tablets and larger screens */
+      html {
+        font-size: 20px;
+      }
+    }
+    

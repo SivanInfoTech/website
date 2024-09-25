@@ -1,0 +1,274 @@
+<div>
+
+<!-- </div> *ngIf="selectedcoursedetails"> -->
+
+
+    <div class="course-page">
+        <div class="top-higlight-section">
+            <div class="row">
+                <img class="course-img col-6 col-md-4" src='../../assets/images/{{selectedcoursedetails.courseid}}.png'>
+                <div class="centering row col-12 col-md-8">
+                    <div class="course-title">{{selectedcoursedetails.title}}</div>
+                    <div class="rating col-10 col-md-12">
+                        <mat-icon class="gold">star</mat-icon>
+                        <mat-icon class="gold">star</mat-icon>
+                        <mat-icon class="gold">star</mat-icon>
+                        <mat-icon class="gold">star</mat-icon>
+                        <mat-icon class="gold">star</mat-icon>
+                        <span>4153 Ratings | Read Reviews</span>
+                    </div>
+                </div>
+            </div> 
+            <div>
+                <div class="icon-row row" style="padding-left:0">
+                    <div class="icon_align col-5 col-md-3"><mat-icon class="feature">access_time</mat-icon>
+                        <span>Real-Time Expert Trainers</span>
+                    </div>
+                    <div class="icon_align col-5 col-md-2"><mat-icon class="feature">videocam</mat-icon>
+                        <span>LIVE Project</span>
+                    </div>
+                    <div class="icon_align col-5 col-md-2"><mat-icon class="feature">assignment</mat-icon>
+                        <span>Certificate</span>
+                    </div>
+                    <div class="icon_align col-5 col-md-2"><mat-icon class="feature">attach_money</mat-icon>
+                        <span>Affordable
+                            Fees</span>
+                    </div>
+                    <div class="icon_align col-10 col-md-2"><mat-icon class="feature"> swap_calls</mat-icon>
+                        <span>Flexibility</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 course-desc">
+                    <div *ngFor="let para of selectedcoursedetails.overview">{{para}}<br><br></div>
+                </div>
+            </div>
+            <div class="row batch-selector-row">
+                <label for="courses" class="select-btach-label">Choose a batch</label>
+                <select name="batche" id="courses" [(ngModel)]="batchtoenroll">
+                    <option value="" [disabled]="true" selected> Select Batch</option>
+                    <option *ngFor="let i of selectedcoursedetails.batches" [ngValue]="i">{{i.startdate}} -
+                        {{i.enddate}}</option>
+                </select>
+                <div class="centering-button">
+                    <button class="enroll-button"
+                        *ngIf="(currentUser$ | async) == null" (click)="enrollcourse(false)" >Enroll now</button>
+                    <button class="enroll-button"
+                    *ngIf="(currentUser$ | async) != null" (click)="enrollcourse(true)">Enroll now</button>
+                </div>
+            </div>
+        </div>
+        <div #pinCourseNavSectionTrigger class="tub-section"></div>
+    </div>
+
+    <div #pinCourseNavSection class = "course-nav-bar-parent">
+        <div class="course-nav-bar row justify-content-around">
+            <div class="section-name section-highligted" id="section-name-benefits" (click)="scrollTo('benefits')">Benefits</div>
+            <div class="section-name" id="section-name-jobroles" (click)="scrollTo('jobroles')">Related Jobs Roles</div>
+            <div class="section-name" id="section-name-skillscovered" (click)="scrollTo('skillscovered')">Skills Covered</div>
+            <div class="section-name" id="section-name-keyhighlights" (click)="scrollTo('keyhighlights')">Key Highlights</div>
+            <div class="section-name" id="section-name-syllabus" (click)="scrollTo('syllabus')">Syllabus</div>
+            <div class="section-name" id="section-name-upcomingbatches" (click)="scrollTo('upcomingbatches')">Upcoming Batches</div>
+            <div class="section-name" id="section-name-section1" (click)="scrollTo('section1')">FAQ</div>
+        </div>
+    </div>
+
+    <div id="detail-section" class="checked-patten container-fluid">
+        <svg class="svg-line" appScrollEffects width="85" height="100%" viewBox="0 0 85 100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path id="path" d="M66.6712 1C70.9617 63.8017 78.2555 213.657 73.1069 310.666C66.6712 431.927 52.4008 546.674 52.4008 677.455C52.4008 782.08 66.2049 951.879 73.1069 1023.7C78.1436 1051.93 85.9224 1160.69 76.7445 1369.94C65.2722 1631.51 77.0243 1514.25 42.3275 1872.02C7.63071 2229.79 7.63071 2154.13 5.11239 2257.35C3.09774 2339.93 4.27296 2458.45 5.11239 2507.39V2558" stroke="url(#paint0_linear_213_11)" stroke-width="7"/>
+            <defs>
+            <linearGradient id="paint0_linear_213_11" x1="42.5" y1="1" x2="42.5" y2="2558" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#b4eb88"/>
+            <stop offset="0.565" stop-color="#07853d" stop-opacity="0.92"/>
+            <stop offset="1" stop-color="#a9ed79" stop-opacity="0"/>
+            </linearGradient>
+            </defs>
+            <!-- </svg> -->
+
+            
+        <!-- <svg appScrollEffects width="59" height="350vh" viewBox="0 0 59 350vh" fill="none" xmlns="http://www.w3.org/2000/svg"> -->
+            <!-- <path id="path" d="M38.9986 1C44.7284 38.3146 55.7053 132.075 53.7753 208.601C51.8453 285.126 43.12 361.147 38.9986 389.592L12.1594 594.211C8.76684 634.737 2.75818 728.291 5.86429 778.298C8.9704 828.306 26.8356 967.433 35.3799 1030.75C42.0771 1083.47 54.4538 1197.74 50.3827 1233.07C45.2938 1277.23 49.6665 1280.33 41.185 1373" stroke="black" stroke-width="7"/> -->
+                
+            <circle cx="66" cy="10" r="10" fill="black"/>
+            <circle id="dot" cx="41.185" cy="1364" r="10" fill="black"/>
+            <!-- <rect x="39" y="1367" width="7" height="7" fill="black"/>
+    <rect x="36" y="1350" width="15" height="15" fill="black"/> -->
+    <!-- <polygon points="34 1350, 51 1350, 43.5 1335" fill="black"/> -->
+    
+        </svg>
+            
+            
+        <div class="section-top row" id="benefits">
+            <div class="sub-section-left col-10 col-md-5">
+                <div class="sub-section-header">Benefits</div>
+                <div class="sub-section-content">{{selectedcoursedetails.benefits}}</div>
+            </div>
+            <div class="img-container col-10 col-md-3">
+                <img class="sub-section-img" src="../../assets/images/gradimg-benefits.png">
+            </div>
+        </div>
+
+
+        <div class="section-top row justify-content-end" id="jobroles">
+            <div class="img-container-left col-10 col-md-3">
+                <img class="sub-section-img" src="../../assets/images/gradimg-jobs.png">
+            </div>
+            <div class="sub-section-right col-10 col-md-4">
+                <div class="sub-section-header">Related Job Roles</div>
+                <div class="sub-section-content">
+                    <div *ngFor="let job of selectedcoursedetails.jobs" id="job">
+                        {{job}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-top row" id="skillscovered">
+            <div class="sub-section-left col-10 col-md-5">
+                <div class="sub-section-header">Skills covered in {{selectedcoursedetails.courseid}} training</div>
+                <div class="sub-section-content">
+                    <div *ngFor="let skill of selectedcoursedetails.skillscovered">
+                        {{skill}}
+                    </div>
+                </div>
+            </div>
+            <div class="img-container col-10 col-md-3">
+                <img class="sub-section-img" src="../../assets/images/gradimg-skills.png">
+            </div>
+        </div>
+        <!-- <div class="skillblk align-items-center" id="skillscovered">
+            <div class="left-section">
+                <div >
+                    <h2 class="bold_h4 text-center">Skills covered in {{selectedcoursedetails.courseid}} training?</h2>
+                </div>
+            </div>
+            <div class="right-section">
+                <div class="skills row justify-content-center">
+                    <div id="skill" *ngFor="let skill of selectedcoursedetails.skillscovered">
+                        <div class="skill-tag">{{skill}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="skillcovered" class = "skill-section">
+            <div class="skill-left-col">
+                <div class="col">
+                    <div id="skillLeft" *ngFor="let skill of skillSet1">
+                        <div class="skill-tag">{{skill}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-heading">
+                <h2 class="skill-heading-text">Skills covered in {{selectedcoursedetails.courseid}} training?</h2>
+            </div>
+            <div class="skill-right-col">
+                <div id="skillRight" *ngFor="let skill of skillSet2">
+                    <div class="skill-tag">{{skill}}</div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+    <div class="section-top" id="keyhighlights">
+        <div class="details_data" style="border: none;">
+            <h2 class="bold_h4 header-center">Key Highlights of this course</h2>
+            <div class="highlight row justify-content-center">
+                <div class="highlight-left">
+                    <div id="point" class="left-texts" *ngFor="let highlight of selectedcoursedetails.highlights.slice(0, selectedcoursedetails.highlights.length / 2); let i = index">
+                        <!-- <div id="point{{i}}"> -->
+                            <div id="leftText{{i}}" class="key-hl-text-bg">
+                                <div  class="key-hightlight" > {{highlight}}</div>
+                            </div>
+                            <div  id="leftImg{{i}}" class="key-hl-img-container">
+                                <img class='leftImg' src='../../assets/images/{{highlight}}.png' width="30px" height="30px"
+                                    alt="..." />
+                            </div>
+                        <!-- </div> -->
+                    </div>
+                </div>
+                <div class="highlight-right">
+                    <div id="point" class="right-texts" *ngFor="let highlight of selectedcoursedetails.highlights.slice(selectedcoursedetails.highlights.length / 2, selectedcoursedetails.highlights.length+1);  let i = index">
+                        <div  id="rightImg{{i}}" class="key-hl-img-container">
+                            <img class='rightImg' src='../../assets/images/{{highlight}}.png' width="30px" height="30px"
+                                alt="..." />
+                            </div>
+                        <div id="rightText{{i}}" class="key-hl-text-bg-right">
+                            <div class="key-hightlight key-hightlight-right">{{highlight}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="syllabus_section" id="syllabus">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 syllabusInner">
+                <div class="head">
+                    <h2 class="bold_h4">Syllabus</h2>
+                    <div class="syllabus_download_btn" (click)="downloaddoc(selectedcoursedetails.courseid)">
+                        <img class='download-syllabus-icon' src='../../assets/images/download_icon_black.png' />
+                        Download Syllabus
+                    </div>
+                </div>
+                <div class="syllablist">
+                    <mat-accordion>
+                        <mat-expansion-panel *ngFor="let item of selectedcoursedetails.syllabuslist let i = index">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title> <span class="moduletitle">Module {{i+1}} :</span> {{item.title}}
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <ul>
+                                <li *ngFor="let data of item.details"> {{data}} </li>
+                            </ul>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </div>
+            </div>
+            <!-- <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 formsec" id="formsec">
+                <div style="width:80%">
+                    <app-enquiry></app-enquiry>
+                </div>
+            </div> -->
+
+        </div>
+    </div>
+
+    <!-- <div class="details_data"> -->
+        <div class="en_blk row justify-content-center" id="enquiry">
+            <div class="col-12">
+                <div class="AskQuestion-Txt">
+                        Have Queries? <br> Talk to our Career Counselor for more Guidance on picking the right Career for you!
+                </div>
+            </div>
+            <button class="btn-enquiry" (click)="openenquiryform()"> Enquire now </button>
+        </div>
+    <!-- </div> -->
+
+
+    <div class="batch_data" id="upcomingbatches">
+        <h2 class="bold_h4">Upcoming Batches</h2>
+        <table class="table upbatchsList">
+            <tbody>
+                <tr *ngFor="let batch of selectedcoursedetails.batches">
+                    <td>{{batch.startdate}} - {{batch.enddate}}</td>
+                    <td>{{batch.daytype}}</td>
+                    <td>{{batch.days}}</td>
+                    <td>
+                        <button class="btn enquiry" (click)="openenquiryform()">Course Fees</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="btndiv">
+            <img src="../../assets/images/calendar-icon.png" height="51px">
+            <button class="req_btn" (click)="openenquiryform()">Request a Custom Batch</button>
+        </div>
+    </div>
+
+</div>
+<!-- <div style="height:100vh"></div> -->
+

@@ -1,0 +1,125 @@
+
+
+<div class="regform row justify-content-center" >
+  <div class="register-form-body row justify-content-around col-10 col-md-7 py-3">
+  <div class="left-section col-12 col-md-5">
+    <!-- <img  class = "study-img img-fluid" src="../../assets/images/Register1.jpeg"> -->
+    <img  class = "study-img img-fluid" src="../../assets/images/sign1234.jpg">
+  </div>
+  
+  <div class="right-section col-12 col-md-6">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form-section">
+    <div class="form-group">
+      <div class="row" style="align-items:center;">
+        <div class="col-4 col-lg-4 title" >
+          <label>First Name*</label>
+        </div>
+      
+
+        <div class="col-6 col-sm">
+          <input type="text" formControlName="firstName" class="input-area"
+            [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row" style="align-items:center;">
+        <div class="col-4 col-lg-4 title">
+          <label>Last Name*</label>
+        </div>
+        <div class="col-6 col-sm">
+          <input type="text" formControlName="lastName" class="input-area"
+            [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row" style="align-items:center;">
+        <div class="col-4 col-lg-4 title">
+          <label>Email*</label>
+        </div>
+        <div class="col-6 col-sm">
+          <input type="text" formControlName="email" class="input-area"
+            [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+          <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <div *ngIf="f.email.errors.required">Email is required</div>
+            <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row" style="align-items:center;">
+        <div class="col-4 col-lg-4 title">
+          <label>Phone*</label>
+        </div>
+        <div class="col-6 col-sm">
+          <input type="text" formControlName="phone" class="input-area"
+            [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row" style="align-items:center;">
+        <div class="col-4 col-lg-4 title" >
+          <label>From College*</label>
+        </div>
+        <div class="col-6 col-sm">
+          <mat-radio-group formControlName="isfromcollege">
+            <mat-radio-button value=true class = "custom-radio">  Yes </mat-radio-button>
+            <mat-radio-button value=false class = "custom-radio" [checked]="true"> No </mat-radio-button>
+       </mat-radio-group>
+        </div>
+      </div>
+    </div>
+    <div class="form-group" *ngIf="validation">
+      <div class="row" style="align-items:center;">
+        <div class="col-4 col-lg-4 title" >
+          <label>College Name*</label>
+        </div>
+        <div class="col-6 col-sm">
+          <input type="text" formControlName="collagename" class="input-area"
+            [ngClass]="{ 'is-invalid': submitted && f.collagename.errors }" />
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row" style="align-items:center;">
+        <div class="col-4 col-lg-4 title">
+          <label>Password*</label>
+        </div>
+        <div class="col-6 col-sm">
+          <input type="password" formControlName="password" class="input-area"
+            [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+            <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row" style="align-items:center;">
+        <div class="col-4 col-lg-4 title">
+          <label>Confirm Password*</label>
+        </div>
+        <div class="col-6 col-sm">
+          <input type="password" formControlName="confirmPassword" class="input-area"
+            [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
+          <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+            <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+            <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col text-center">
+        <button class="register-button" id="align" [disabled]="submitted || !registerForm.valid">Register</button>
+      </div>
+    </div>
+  </form>
+</div>
+</div>
+
+</div>

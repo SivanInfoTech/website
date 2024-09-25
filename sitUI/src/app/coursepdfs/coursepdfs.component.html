@@ -1,0 +1,44 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <!-- <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+      </ng-container> -->
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="courseid">
+    <th mat-header-cell *matHeaderCellDef> Course ID </th>
+    <td mat-cell *matCellDef="let element"> <span>{{element.courseid}}</span></td>
+  </ng-container>
+
+  <ng-container matColumnDef="courseshortform">
+    <th mat-header-cell *matHeaderCellDef> Course ShortForm</th>
+    <td mat-cell *matCellDef="let element"> <span>{{element.courseshortform}}</span></td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef> Title </th>
+    <td mat-cell *matCellDef="let element"> <span>{{element.title}} </span></td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="syllabus">
+    <th mat-header-cell *matHeaderCellDef> Syllabus </th>
+    <td mat-cell *matCellDef="let element">
+      <span (click)="downloaddoc(element.courseid)">
+        <mat-icon class="hover-style" matTooltip="Download Syllabus document">cloud_download</mat-icon> </span>
+      &nbsp;
+      <span (click)="fileInput.click()">
+        <mat-icon matTooltip="Upload Syllabus document" class="hover-style">cloud_upload</mat-icon>
+        <input type="file" hidden #fileInput id="file" (change)="handleFileInput($event, element.courseid)"> </span>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

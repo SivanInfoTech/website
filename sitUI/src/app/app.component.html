@@ -1,0 +1,13 @@
+<div *ngIf="isMobile">
+  <!-- Content for mobile -->
+  <mobile-header></mobile-header>
+</div>
+<div *ngIf="!isMobile">
+  <!-- Content for desktop -->
+  <app-header></app-header>
+</div>
+
+
+<router-outlet></router-outlet>
+
+<app-footer></app-footer>

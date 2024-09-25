@@ -1,0 +1,168 @@
+@font-face {
+    font-family: 'Manrope';
+    src: url('../../assets/fonts/Manrope-Bold.woff2') format('woff2');
+  }
+
+
+@font-face {
+font-family: 'Nhaas';
+src: url('../../assets/fonts/NHaasGroteskDSPro-45Lt.woff2') format('woff2');
+}
+  
+
+.regform {
+    /* position: absolute; */
+    width: 100vw;
+   
+    /* margin-left: auto; */
+    /* margin-top: auto;  */
+    border-radius: 10px;
+    background-color: inherit;
+    margin-top: 30vh;
+    margin-bottom: 20vh;
+    /* height: 50vh; */
+    padding: 0;
+    margin-left: 0;
+}
+
+.register-form-body {
+    height: fit-content;
+    width: fit-content;
+    position: relative;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0px 0px 10px rgb(150, 150, 150);
+}
+
+ .register-form-body::after {
+    /* content: ""; */
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    bottom: 5%;
+    left: 2%;
+    z-index: -1;
+    transform: rotate(5deg);
+    border-radius: 15px;
+    background-image: linear-gradient(349deg, #0e8e80 1.83%, #2896ed 52% 53.68%, #10e054 106.48%); 
+     /* background-image: linear-gradient(349deg, #fa5853 1.83%, #f46692 52% 53.68%, #ffc444 106.48%); */
+}  
+
+
+.left-section{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    
+    /* box-shadow: 0 10px 12px rgba(0, 0, 0, 0.1);
+    background-color: #fff; */
+    /* height: 50vh; */
+
+    /* background: hsla(91, 65%, 62%, 1);
+
+    background: linear-gradient(135deg, hsla(91, 65%, 62%, 1) 15%, hsla(209, 64%, 52%, 1) 99%);
+
+    background: -moz-linear-gradient(135deg, hsla(91, 65%, 62%, 1) 15%, hsla(209, 64%, 52%, 1) 99%);
+
+    background: -webkit-linear-gradient(135deg, hsla(91, 65%, 62%, 1) 15%, hsla(209, 64%, 52%, 1) 99%);
+
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#9DDD61", endColorstr="#3788D3", GradientType=1 ); */
+}
+
+
+.study-img{
+   padding: 0;
+   margin-top: auto;
+   margin-bottom: auto;
+   height: 500px;
+}
+
+.right-section{
+    background-color: #fff;
+    /* box-shadow: 0 10px 12px rgba(0, 0, 0, 0.1); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+.mdc-radio>label {
+    margin-bottom: 0 !important;
+}
+::ng-deep .mat-mdc-radio-button .mdc-radio {
+    margin-bottom: 10px !important;
+}
+.logo {
+    width: 99px;
+    margin-left: 40%;
+    margin-top: 20px;
+    margin-bottom: 21px;
+}
+.title {
+    font-size: 80%;
+    font-weight: 400;
+    font-family: 'Nhaas';
+    color: #454545;
+    letter-spacing: 1px;
+}
+.subbtn {
+    margin-left: 41%;
+    margin-top: 18%;
+    font-weight: 600;
+    font-size: 17px;
+    border: none;
+    background-color: #d5e3fc;
+}
+
+.input-area{
+ border:none;
+ background-color: inherit;
+ border-bottom: solid 0.5px rgb(67, 67, 67);
+}
+
+label#tag {
+    width: 142px;
+    display: inline-block;
+    /* font-family: "Lato", Sans-serif; */
+    font-size: 14px;
+  }
+
+.register-button{
+    background-color: rgb(33, 31, 31);
+    color: #ffffff;
+    border: none;
+    width: fit-content;
+    padding: 10px 35px;
+    font-family: 'Nhaas';
+    letter-spacing: 1px;
+    margin-top: 1vh;
+}
+
+.form-section{
+    margin-top: 5vh;
+    margin-left: 1vw;
+}
+
+
+.custom-radio {
+    /* Default color when not selected */
+    color: #520064;
+}
+
+.custom-radio:checked {
+/* Custom color when selected */
+    color: #7bc798; /* Your custom color */
+}
+
+.mdc-radio__outer-circle {
+    border-color: #000;
+}
+
+/* Mobile */
+@media(max-width: 768px) {
+    .regform {
+        margin-top: 10vh;
+    }
+    .title {
+        font-size: 100%;
+    }
+}

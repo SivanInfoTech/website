@@ -1,0 +1,138 @@
+.cdk-overlay-pane {
+    width: fit-content;
+}
+.form-modal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    /* border-radius: 15px;
+    background: #fff;
+    box-shadow: 0px 0px 10px rgb(150, 150, 150); */
+}
+.cdk-overlay-pane::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    bottom: 5%;
+    left: 2%;
+    z-index: -1;
+    transform: rotate(5deg);
+    border-radius: 15px;
+    background-image: linear-gradient(349deg, hsl(2, 94%, 65%) 1.83%, #f46692 52% 53.68%, #ffc444 106.48%);
+}
+
+.form-img-container {
+    background-color: #ffffff;
+    padding: 2vh;
+    /* margin: 20px; */
+    height: 100%;
+    /* border-radius: 20%; */
+}
+.form-img {
+    /* max-width: 20vw; */
+    height: 230px;
+    /* margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto; */
+}
+.form-content {
+    margin: 0;
+    /* background-color: #dbfbe0; */
+    border-radius: 15px;
+    height: 100%;
+    right: 0;
+    /* background-image: linear-gradient(349deg, #f37874 1.83%, #f58bad 52% 53.68%, #eeca7d 106.48%); */
+}
+.verifyform, .verificationdata {
+    position: relative;
+    height: 100%;
+    padding: 20px 10px;
+}
+/* .form-group {
+    min-width: 30vw;
+} */
+label {
+    font-size: 80%;
+}
+.invalid-feedback {
+    font-size: 70%;
+}
+#point {
+    margin-left: 5%;
+    margin-right: 10px;
+    color: #6c6b6b;
+    width: 120px;
+    font-weight: 600;
+}
+.form-control {
+    outline: none;
+    /* border: none; */
+}
+.form-control:focus {
+    outline: none;
+    /* border: solid 1px black; */
+}
+.field {
+    /* width: 40%; */
+    /* font-family: Roboto,sans-serif; */
+    font-size: 110%;
+}
+.details {
+    margin-left: 4%;
+    margin-bottom: 3%;
+}
+.red {
+    color: red;
+    margin-left: 5%;
+    margin-bottom: 3%;
+    font-weight: 600;
+}
+.green {
+    color: green;
+    margin-left: 5%;
+    margin-bottom: 3%;
+    font-weight: 600;
+}
+
+.btn {
+    background-color: #000000;
+    border-radius: 0;
+}
+
+@media (max-width: 768px) {
+    .form-modal {
+        flex-direction: column;
+        width: 100%;
+    }
+    .form-img {
+        max-width: 50vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .form-img-container {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+    .form-content {
+        margin: 0;
+        width: 100%;
+        border-radius: 15px 15px 4px 4px;
+    }
+    .cdk-overlay-pane {
+        width: 80vw;
+    }
+    #cdk-overlay-0 {
+        width: 80vw;
+    }
+    #point {
+        margin-left: 5%;
+        margin-right: 10px;
+        color: #6c6b6b;
+        width: 40%;
+        font-weight: 600;
+    }
+}

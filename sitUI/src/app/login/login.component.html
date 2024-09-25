@@ -1,0 +1,51 @@
+<div class="login-page row justify-content-center"  >
+    <div class="loginform col-10 col-md-6 row justify-content-center">
+        <!-- <img class="login-image col-10 col-md-4" src="../../assets/images/gradimg-login.png"> -->
+        <img class="login-image col-10 col-md-5" src="../../assets/images/login1234.jpg">
+        <div class="login-fields col-12 col-md-7">
+            <form [formGroup]="loginform" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <div class="row" style="align-items:center;">
+                        <div class="col-md-3 title">
+                            <label>Email *</label>
+                        </div>
+                        <div class="col-sm" >
+                            <input type="text" formControlName="email" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                <div *ngIf="f.email.errors.required">Email is required</div>
+                                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row" style="align-items:center;">
+                        <div class="col-md-3 title">
+                            <label>Password*</label>
+                        </div>
+                        <div class="col-sm">
+                            <input type="password" formControlName="password" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                <div *ngIf="f.password.errors.required">Password is required</div>
+                                <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="forgot_password_container">
+                    <a (click)="navigateForgotPassword()" class="forgot_link">Forgot password</a>
+                </div>
+                <div class="form-group" style="margin-top: 10px;">
+                    <div class="col text-center" style="display: flex;justify-content: space-between;">
+                        <button class="btn btn-login" id="align">Login</button>
+                        <button class="btn btn-login" id="align" [routerLink]="['/register']">Register</button>
+
+                    </div>   
+                  
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

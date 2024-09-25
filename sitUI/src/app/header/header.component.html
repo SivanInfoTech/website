@@ -1,0 +1,118 @@
+<div class="header">
+  <!-- <div class="contacts">
+    <div class="contactdata">
+      <div>
+        
+        <a href="tel: 91 63813 92637" target="_blank">
+          <img src="../../assets/images/phone.png" width="16px"
+            alt="media network social viber icon" /></a>
+        <span class="contactdetail">+91 6381392637</span>
+      </div>
+      <div>
+       
+
+        <a href="mailto: info@sitcloud.in" target="_blank"><img
+            src="../../assets/images/email.png" width="16px" alt="email logo png" /></a>
+
+        <span class="contactdetail">info@sitcloud.in</span>
+      </div>
+      <div>
+       
+        <a href="https://maps.app.goo.gl/tffybvxnKByA6aDg9?g_st=ic" target="_blank"><img
+            src="../../assets/images/location.png"
+            width="14px" alt="google location icon icons and png backgrounds lokasi logo" /></a>
+        <span>
+          First floor, 9 , Madhan Square Neelamangalam Guduvancheri Chennai
+          Pincode - 603202</span>
+      </div>
+      <div class="socialmedia">
+        <a href="mailto: info@sitcloud.in" target="_blank"><img
+            src="../../assets/images/email.png" width="21px" alt="email logo png" /></a>
+        &nbsp;
+        <a href="https://fb.me/SivanInfoTech" target="_blank"><img
+            src="../../assets/images/facebook.png"
+            width="21px" alt="Circle F Logo, Facebook Icon Social Media" /></a> &nbsp;
+
+        <a href="https://twitter.com/info_sivan" target="_blank"><img
+            src="../../assets/images/twitter.png"
+            width="21px" alt="black and white twitter logo png hq download" /></a> &nbsp;
+        <a href="https://instagram.com/sivan_info_tech" target="_blank"><img
+            src="../../assets/images/insta.png" width="21px"
+            alt="instagram outline icon png" /></a> &nbsp;
+        <a href="https://telegram.me/sivan_info_tech" target="_blank"><img
+            src="../../assets/images/telegram.png"
+            width="21px" alt="file telegram font awesome svg wikimedia commons" /></a> &nbsp;
+        <a href="https://www.youtube.com/@SIVANINFOTECH/" target="_blank"><img
+            src="../../assets/images/youtube.png"
+            width="21px" alt="youtube play button, file youtube play buttom dark icon svg wikimedia commons" /></a>
+        &nbsp;
+
+      </div>
+    </div>
+  </div> -->
+
+  <div class="content">
+    <a href="/home">
+      <img class="logo" src="../../assets/images/footerlogo.png" />
+    </a>
+    <div class="matnav">
+      <mat-list class="list-horizontal">
+        <mat-list-item>
+          <button class="coursebtn" (mouseenter)="openMyMenu()">
+            <div #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="courses">COURSES</div>
+          </button>
+          <mat-menu #courses="matMenu" class="customize">
+            <span (mouseleave)="closeMyMenu()">
+              <button mat-menu-item *ngFor="let course of courselist" [routerLink]="['/course']"
+                [queryParams]="{id: course}">{{course}}</button>
+            </span>
+          </mat-menu>
+        </mat-list-item>
+        <mat-list-item>
+          <button class="btn bg-transaprent" routerLink="/home">HOME</button>
+        </mat-list-item>
+        <mat-list-item>
+          <button class="btn bg-transaprent" routerLink="/aboutus">AboutUs</button>
+        </mat-list-item>
+        <mat-list-item>
+          <button class="btn bg-transaprent" routerLink="/cloudacclerator">Cloud Accelerator</button>
+        </mat-list-item>
+          <mat-list-item>
+          <button class="btn bg-transaprent" (click)="opencert()">Verify Certificate</button>
+        </mat-list-item>
+         <mat-list-item *ngIf="(currentUser$ | async) == null">
+          <button class="btn bg-transaprent" routerLink="/payment">COURSE PAYMENT</button>
+        </mat-list-item>
+        
+        <!-- <mat-list-item *ngIf="(currentUser$ | async) == null">
+          <button class="btn bg-transaprent" routerLink="/register">REGISTER</button>
+        </mat-list-item> -->
+        
+        <mat-list-item *ngIf="(currentUser$ | async) == null"><button class="btn bg-transaprent" routerLink="/login">LOGIN</button>
+        </mat-list-item>
+      
+        <mat-list-item *ngIf="currentUser$ | async as currentUser">
+          <button class="btn bg-transaprent" *ngIf="currentUser?.firstName" (mouseenter)="openaccmenu()">
+            <div #menuTrigger1="matMenuTrigger" [matMenuTriggerFor]="accmenu">
+              {{ currentUser?.firstName}} {{ currentUser?.lastName}}
+            </div>
+          </button>
+          <mat-menu #accmenu="matMenu" class="customize">
+            <div (mouseleave)="closeaccmenu()">
+              <button mat-menu-item (click)="logOut()" class="btn_option" *ngIf="currentUser?.firstName">
+                LogOut</button>
+              <button mat-menu-item routerLink="/student/enrollments" class="btn_option"
+                *ngIf="currentUser?.role == 'STUDENT'">My Enrollments</button>
+              <button mat-menu-item class="btn_option" *ngIf="currentUser?.role == 'ADMIN'"
+                routerLink="/admin/studentlist">Students List</button>
+              <button mat-menu-item class="btn_option" *ngIf="currentUser?.role == 'ADMIN'"
+                routerLink="/admin/coursepdfs">Course List</button>
+              <button mat-menu-item class="btn_option" *ngIf="currentUser?.role == 'ADMIN'"
+                routerLink="/admin/configads">Configure Ads</button>
+            </div>
+          </mat-menu>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+</div>

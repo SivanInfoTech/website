@@ -1,0 +1,39 @@
+/* styles.css */
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 10%;
+    margin-bottom: 4%;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  /* Payment Response Table Styles */
+  .payment-response-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .payment-response-table th,
+  .payment-response-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .payment-response-table th {
+    background-color: #f2f2f2;
+  }
+  

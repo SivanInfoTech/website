@@ -1,0 +1,181 @@
+<div class="homepage">
+    <div class='enquiry-widget'>
+        <svg class='enquiry-svg' xmlns="http://www.w3.org/2000/svg" class="svg-icon"
+            style="width: 6vmin;height: 6vmin;vertical-align: middle;fill: currentColor;overflow: hidden;"
+            viewBox="0 0 1024 1024" version="1.1">
+            <path
+                d="M507.744 64c245.056 0 443.712 198.656 443.712 443.744 0 245.056-198.656 443.712-443.712 443.712C262.656 951.456 64 752.8 64 507.744 64 262.656 262.656 64 507.744 64z m0 64C298.016 128 128 298.016 128 507.744c0 209.696 170.016 379.712 379.744 379.712 209.696 0 379.712-170.016 379.712-379.712C887.456 298.016 717.44 128 507.744 128z m2.4 496.96c12.096 0 22.464 3.456 30.528 11.52 8.064 7.488 12.096 17.28 12.096 29.376s-4.608 21.888-12.672 29.952c-8.064 7.488-18.432 11.52-29.952 11.52a41.28 41.28 0 0 1-29.952-12.096 40 40 0 0 1-12.096-29.376c0-12.096 4.032-21.888 12.096-29.376 8.064-8.064 18.432-11.52 29.952-11.52zM520.512 288c36.864 0 66.816 9.792 89.856 30.528 23.04 20.16 34.56 47.808 34.56 82.368 0 28.224-7.488 51.84-21.888 70.272-5.184 6.336-21.312 21.312-48.384 44.928a95.68 95.68 0 0 0-24.192 29.952c-6.336 11.52-9.216 24.192-9.216 38.016v9.792h-61.632v-9.792c0-21.312 3.456-39.744 11.52-54.72 7.488-16.128 29.376-39.744 65.088-71.424l9.792-10.944c10.368-13.248 16.128-27.072 16.128-42.048 0-20.16-5.76-35.712-16.704-47.232-11.52-11.52-28.224-17.28-48.96-17.28-25.92 0-44.928 8.064-56.448 24.768-10.368 13.824-15.552 33.408-15.552 58.752-6.176 33.984-60.48 25.344-60.48 0 0-42.048 12.096-74.88 36.288-99.072C444.48 300.096 477.888 288 520.512 288z" />
+        </svg>
+    </div>
+    <!-- <div class='sticky-side-panel'>
+        <img class='ssp-loc ssp-icon' src='../../assets/images/location.png'>
+        <img class='ssp-fb ssp-icon' src='../../assets/images/facebook.png'>
+        <img class='ssp-loc ssp-icon' src='../../assets/images/location.png'>
+        <img class='ssp-fb ssp-icon' src='../../assets/images/facebook.png'>
+        <img class='ssp-loc ssp-icon' src='../../assets/images/location.png'>
+        <img class='ssp-fb ssp-icon' src='../../assets/images/facebook.png'>
+        <div class='ssp-enquiry ssp-icon'>Enquire</div>
+    </div> -->
+    <div class="flashnews">
+        <div id="scroll-container">
+            <!-- <div id="scroll-text"><img src="../../assets/images/new1.gif" height="30px"> {{flashads}}<div>
+                </div>
+            </div> -->
+        </div>
+
+    </div>
+    <div class="home">
+        <div class="row justify-content-center align-items-center">
+            <div class="landing-text-section col-10 col-md-5">
+                <div class="head_by">Get Trained by Industry Experts via</div>
+                <h3 class="h2head">Instructor-led classes </h3>
+                <span class="classNameToggle">
+                    <div class='class-name-1'>Live online &</div>
+                    <div class='class-name-2'>classroom Training</div>
+                </span>
+                <div class="head_by2">With 100% Placement Support</div>
+                <div class="homeButtons row">
+                    <button class="btn red" (click)="openenquiryform()">ENQUIRE NOW</button>
+                    <a class="btn phone" href="tel: 91 63813 92637" target="_blank"> 📞 Schedule a demo class</a>
+                </div>
+            </div>
+            <div class="landing-img col-10 col-md-5 row">
+                <img class="model col-12" src="../../assets/images/green.jpeg">
+                <!-- <img  class="model col-12" src="../../assets/images/cloud-home.jpg"> -->
+            </div>
+        </div>
+        <div class="flash-ad-strip">
+            <marquee *ngFor="let ad of flashads">{{ad}}</marquee>
+        </div>
+    </div>
+
+
+    <div class="pin-section-container container-fluid">
+        <!-- <div class="floating-bg"></div> -->
+        <div class="row">
+            <div class="left-section-parent col-12 col-md-5">
+                <div #pinsection class="left-section">
+                    Sivan<br> Info Tech
+                </div>
+            </div>
+            <div #pinsectionBreak class="right-section col-12 col-md-7">
+                A Training and Placement company by IT veterans with over two decades of experience in top notch MNC
+                companies. Tailor made curriculam for each student's need delivered by our expert trainers from diverse
+                streams. You get a lifetime certification of merit, guidance to grab certification from Amazon,
+                Microsoft and more.
+            </div>
+        </div>
+
+    </div>
+
+    <div style="height: 30vh;"></div>
+
+
+    <div class="our-highlights">
+        <div class="circle text-center"></div>
+        <p class="why-sivan-infotech our-text">so now you think why us?</p>
+        <div class="benefit-parent" style="display: flex;">
+            <div class="benefits our-text">Real Time Experts as Trainers</div>
+            <img class="highlight-icon" src="../../assets/HighlightIcons/circleIcon1.png">
+        </div>
+        <div style="display: flex;">
+            <div class="benefits">Placement support</div>
+            <img class="highlight-icon" src="../../assets/HighlightIcons/circleIcon2.png">
+        </div>
+        <div style="display: flex;">
+            <div class="benefits">Certification</div>
+            <img class="highlight-icon" src="../../assets/HighlightIcons/circleIcon3.png">
+        </div>
+        <div style="display: flex;">
+            <div class="benefits">Affordable Fees</div>
+            <img class="highlight-icon" src="../../assets/HighlightIcons/circleIcon4.png">
+        </div>
+        <div style="display: flex;">
+            <div class="benefits">custom batch training</div>
+            <img class="highlight-icon" src="../../assets/HighlightIcons/circleIcon5.png">
+        </div>
+    </div>
+
+    <div style="height: 20vh;"></div>
+    <div class="top-courses-section">
+        <div class="text-center h1 top-course-title display-6">Top Trending</div>
+        <div class="card-container justify-content-center" style="gap: 30px">
+            <div class="card1 card  mt-5" [routerLink]="['/course']" [queryParams]="{id: 'AWS'}">
+                <img class="card-img card-img-top mx-auto" src="../../assets/images/AWS.png">
+                <div class="card-body">
+                    <div class="card-text p-2 text-center">Amazon Web Services</div>
+                    <div class="card-text certification p-2 text-center">certification training</div>
+                    <div class="view-course">VIEW COURSE</div>
+                </div>
+            </div>
+
+            <div class="card2 card mt-5" [routerLink]="['/course']" [queryParams]="{id: 'Python'}">
+                <img class="card-img card-img-top mx-auto" src="../../assets/images/python1.jpg">
+                <div class="card-body">
+                    <div class="card-text p-2 text-center">Python Programming</div>
+                    <div class="card-text certification p-2 text-center">certification training</div>
+                    <div class="view-course">VIEW COURSE</div>
+                </div>
+            </div>
+
+            <div class="card3 card mt-5" [routerLink]="['/course']" [queryParams]="{id: 'Azure'}">
+                <img class="card-img card-img-top mx-auto" src="../../assets/images/Azure1.jpg">
+                <div class="card-body">
+                    <div class="card-text p-2 text-center">Azure Cloud</div>
+                    <div class="card-text certification p-2 text-center">certification training</div>
+                    <div class="view-course">VIEW COURSE</div>
+                </div>
+            </div>
+
+            <div class="card4 card mt-5" [routerLink]="['/course']" [queryParams]="{id: 'Kubernetes'}">
+                <img class="card-img card-img-top mx-auto" src="../../assets/images/kubernetes1.jpg">
+                <div class="card-body">
+                    <div class="card-text p-2 text-center">Kubernetes</div>
+                    <div class="card-text certification p-2 text-center">certification training</div>
+                    <div class="view-course">VIEW COURSE</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="whyCloudSection container-fluid">
+        <!-- <div class='running-name-box1'>
+            <div class="running-name1">sivan infotech . sivan infotech . sivan infotech . sivan infotech . sivan
+                infotech . sivan infotech . sivan infotech .</div>
+        </div> -->
+        <!-- <div class='running-name-box2'>
+            <div class="running-name2">aws .Azure. python . KUBERNETES . aws . azure . python . KUBERNETES</div>
+        </div> -->
+        <div class="bigCard">
+            <div class="tag-container row">
+                <div class="tag1" *ngFor="let tag of cardTags">{{tag}}</div>
+            </div>
+            <div class="big-card-title">why <br>cloud</div>
+            <div class="big-card-detail">IT organisations looking for a full-stack developers and programmers, aim is to
+                hunt the students who has good knowledge of cloud computing and cloud terminologies in off-campus or
+                on-campus drives. Since the entire globe is moving towards building applications for Machine Learning
+                (ML), Artificial Intelligence (AI), Augmented reality (AR) and Virtual Reality (VR) and all these
+                developments, deployments are powered by Cloud computing platform.</div>
+        </div>
+    </div>
+
+
+
+
+    <!-- <div style="height: 100vh;"></div> -->
+    <!-- <div class="flashing-page">
+
+            <div class="circle-two"></div>
+            <p class="sivan-info-tech our-text">sivan infotech</p>
+
+        </div> -->
+
+    <!-- <div class="row justify-content-center">
+            <video #myVideo class = "mac-video col-6" width="700" height="auto" playsinline="" preload="auto" autoplay="">
+                <source src="../../assets/videos/mac.mp4" type="video/mp4"> 
+            </video>
+        </div> -->
+
+
+
+</div>

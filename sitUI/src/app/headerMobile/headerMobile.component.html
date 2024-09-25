@@ -1,0 +1,53 @@
+<div class="header-row">
+  <a href="/home">
+    <img class="logo" src="../../assets/images/logo.png" />
+  </a>
+  <div *ngIf="!showModal" class="mobile-header row justify-content-center" (click)="toggleModal(true)">
+    <div class="icon-line"></div>
+    <div class="icon-line"></div>
+  </div>
+  <div  *ngIf="showModal" class="menu-screen">
+    <div class="icon-close" (click)="toggleModal(false)">X</div>
+    <div class="menu-item" (click)="listCourses()">COURSES</div>
+    <div *ngIf="expandCourseList" class="menu-list">
+      <div class="menu-sub-item" *ngFor="let course of courselist" [routerLink]="['/course']"
+        [queryParams]="{id: course}" (click)="navigateTo('course')">{{course}}</div>
+    </div>
+    <div class="menu-item" (click)="navigateTo('home')">HOME</div>
+    <div class="menu-item" (click)="navigateTo('aboutus')">ABOUT US</div>
+    <div class="menu-item" (click)="navigateTo('verify')">VERIFY CERTIFICATE</div>
+    <div class="menu-item" (click)="navigateTo('register')">REGISTER</div>
+    
+    <div *ngIf="(currentUser$ | async) == null" class="menu-item" (click)="navigateTo('login')">LOGIN</div>
+  </div>
+
+  <!-- <div class="content">
+   
+    <div class="matnav">
+      <mat-list class="list-horizontal">
+        <mat-list-item *ngIf="currentUser$ | async as currentUser">
+          <button class="btn bg-transaprent" *ngIf="currentUser?.firstName" (mouseenter)="openaccmenu()">
+            <div #menuTrigger1="matMenuTrigger" [matMenuTriggerFor]="accmenu">
+              {{ currentUser?.firstName}} {{ currentUser?.lastName}}
+            </div>
+          </button>
+          <mat-menu #accmenu="matMenu" class="customize">
+            <div (mouseleave)="closeaccmenu()">
+              <button mat-menu-item (click)="logOut()" class="btn_option" *ngIf="currentUser?.firstName">
+                LogOut</button>
+              <button mat-menu-item routerLink="/student/enrollments" class="btn_option"
+                *ngIf="currentUser?.role == 'STUDENT'">My Enrollments</button>
+              <button mat-menu-item class="btn_option" *ngIf="currentUser?.role == 'ADMIN'"
+                routerLink="/admin/studentlist">Students List</button>
+              <button mat-menu-item class="btn_option" *ngIf="currentUser?.role == 'ADMIN'"
+                routerLink="/admin/coursepdfs">Course List</button>
+              <button mat-menu-item class="btn_option" *ngIf="currentUser?.role == 'ADMIN'"
+                routerLink="/admin/configads">Configure Ads</button>
+            </div>
+          </mat-menu>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </div> -->
+  
+</div>
