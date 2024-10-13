@@ -79,7 +79,7 @@
 
 .home{
     width: 100vw;
-    height: 100vh;
+    height: auto;
     overflow-x: hidden;
     margin: 0;
     /* background-image: url("../../assets/images/6626132.jpg");   
@@ -89,14 +89,14 @@
     background-position: right; */
 
 }
-
-.container {
+/* why cloud */
+/* .container {
     height: 30px;
     overflow: hidden;
     position: relative;
     width: 100%;
     
-  }
+  } */
 #iconstyle {
     margin-left: 43%;
     margin-bottom: 7px;
@@ -298,34 +298,34 @@
 
 ::-webkit-scrollbar {
     width: 4px;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     background: white;
     box-shadow: white;
 }
 
 ::-webkit-scrollbar-thumb {
     background: rgb(144, 237, 164);
-    border-radius: 10px;
+    border-radius: 1px;
 }
 
 .flash-ad-strip {
   width: 104%;
-  margin-bottom: 10p;
+  /* margin-bottom: 10px; */
   /* margin-top: 10%; */
 
   height: fit-content;
   /* transform: skewY(30deg); */
   /* transform: rotate(3deg) translateX(-2%); */
-  background-color: #ddd7d7;
+  /* background-color: #ddd7d7; */
   background-color: #6b6b6b;
   font-size: 100%;
-  /* padding: 5px; */
+  padding: 2px;
   display: flex;
 }
 
 marquee {
   height: fit-content;
-  padding: px;
+  padding: 5px;
   /* background-color: #2d2ae6; */
   background-image:linear-gradient(349deg, var(--gray) 1.83%, var(--gray) 52% 53.68%, var(--gray) 106.48%);
   color: #F75F72;
@@ -506,7 +506,7 @@ box-shadow: 0px 0px 20px 1px rgba(0,0,0, 0.2);
   position: relative;
   width: 100vw;
   height: fit-content;
-  padding-bottom: 25vh;
+  padding-bottom: 20vh;
 
   background-color: #ffffff;
 
@@ -662,7 +662,7 @@ padding-bottom: 4vmin;
   display: flex;
   flex-direction: column;
   /* margin-top: 20vh; */
-  padding-top:40vh;
+  /* padding-top:40vh; */
   /* height: 110vh; */
   /* background-color: aqua; */
 }
@@ -870,15 +870,15 @@ padding: 5px;
     font-size: 80%;
   }
 }
-
-.container {
+/* why cloud */
+/* .container {
   width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #1bc892;
-}
+} */
 
 .our-highlights{
   display: flex;
@@ -1081,9 +1081,10 @@ p {
 .tag-container{
   position: absolute;
   right: 60px;
+  /* width: 15vw; */
   width: 15vw;
   min-width: 300px;
-  margin-top: 3vh;
+   margin-top: 3vh;
   /* align-items: right; */
 }
 
@@ -1236,6 +1237,7 @@ p {
   .whyCloudSection{
     margin-top: 0;
     padding-top: 20vh;
+
   }
 
   .running-name-box1 {
@@ -1297,6 +1299,105 @@ p {
     padding: 0px 10px;
   }
 }
+
+/* why cloud card */
+.cloud_card_container{
+  margin: 9px;
+  /* box-shadow: #18e146 1px 2px 8px 0px; */
+  /* box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px; */
+  /* box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px; */
+  box-shadow: 0px 0px 10px rgb(150, 150, 150);
+  background-color:white;
+  height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+    align-items: center;
+    
+}
+.cloud_titles{
+  color:black;
+  font-weight: bold;
+  font-size: 19px;
+}
+.cloud-images{
+  height: 52px;
+  width: 52px;
+  /* background: #d5cdcd; */
+  /* border-radius: 23%; */
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.cloud_card_container{
+  transition: all 0.4s ease 0s;
+  border-radius: 5px;
+}
+.cloud_card_container:hover {
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1);
+  z-index: 1000;
+  transition: 0.5s;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgb(150, 150, 150);
+}
+.btnhead {
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  padding: 10px 20px;
+  background: white;
+  /* font-size: 28px; */
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  transition: all 1s;
+}
+
+.btnhead:after,
+.btnhead:before {
+  content: " ";
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  border: 0 solid #fff;
+  transition: all 1s;
+}
+.btnhead:after {
+  top: -1px;
+  left: -1px;
+  border-top: 5px solid #0193c3;
+  border-left: 5px solid #0193c3;
+}
+
+.btnhead:before {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 5px solid #0193c3;
+  border-right: 5px solid #0193c3;
+}
+
+.btnhead:hover {
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+.btnhead:hover:before,
+.btnhead:hover:after {
+  width: 100%;
+  height: 100%;
+}
+
+.data-container {
+  /* background: black; */
+  /* height: 100vh; */
+  transform: scale(2); /* Use transform for scaling */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
 
 
 

@@ -28,10 +28,10 @@ export class HomeComponent implements OnInit {
   @ViewChild('pinsection') leftSection1Ref: ElementRef;
   @ViewChild('pinsectionBreak') pinsectionBreakPoint: ElementRef;
 
-  cardTags= ['Security', 'Mobility', 'Provisioning', 'Automation', 'Cost', 'Scalability', 'Customizable', 'Elasticity', 'Capex', 'Resilience', 'Availability', 'Opex', 'Carbon Footprint', 'Backup', 'DR']
+  cardTags= ['Security', 'Mobility', 'Provisioning', 'Automation', 'Cost', 'Scalability', 'Customizable', 'Elasticity',  'Resilience', 'Availability', 'Opex', 'Backup']
 
 
-  flashads = ['Free AWS certification training', '50% off on Azure certification training', 'New advanced modules added in Python curriculum']
+  flashads = ['Free AWS certification training , 50% off on Azure certification training , New advanced modules added in Python curriculum']
   classRoomTimeId = 0
   whypoints = ["Sivan Info Tech which is primarily focused on cloud computing & leading technology training such as Kubernetes and Cloud Accelerator development. So, the students can be hired by us for our cloud products development.",
     "SIT is not only concentrating on delivering the theory & practical sessions, but we will also sit along with the candidate and mould him/her from the scratch such as resume preparation, guiding on uploading it in leading job portal.",
@@ -78,7 +78,28 @@ export class HomeComponent implements OnInit {
     iconcolor: "#00f7ff"
   }]
   enquiryref: MatDialogRef<EnquiryComponent>;
+  
+whyCloudDataList:any=[
+  { title : 'Security' , image :"../../assets/images/cloud_security.png"},
+  { title : 'Mobility' , image :"../../assets/images/Mobility.png"},
+  { title : 'Provisioning' , image :"../../assets/images/cloud-Provisioning.png"},
+  { title : 'Automation' , image :"../../assets/images/cloud-automation.png"},
+  { title : 'Cost' , image :"../../assets/images/cloud-cost.png"},
+  { title : 'Scalability' ,image :"../../assets/images/cloud-scalability.png"},
+  { title : 'Customizable' , image :"../../assets/images/cloud_security.png"},
+  { title : 'Elasticity' , image :"../../assets/images/cloud-Elasticity.png"},
+  // { title : 'Capex' , image :"../../assets/images/capex.png"},
+  { title :  'Resilience' , image :"../../assets/images/Resilience.png"},
+  { title : 'Availability' , image :"../../assets/images/Availability.png"},
+  { title : 'Opex' , image :"../../assets/images/opex.png"},
+  // { title : 'Carbon Footprint' ,image :"../../assets/images/cloud_security.png"},
+  { title : 'Backup' , image :"../../assets/images/cloud_security.png"},]
+  // { title : 'DR' , image :"../../assets/images/cloud_security.png"}, ]
 
+
+  firstGroup: any[] = [];
+  secondGroup: any[] = [];
+  // thirdGroup: any[] = [];
   constructor(
     public dialog: MatDialog,
     private AdsService: ADSService,
@@ -188,6 +209,9 @@ export class HomeComponent implements OnInit {
   
 
   ngOnInit() {
+    this.firstGroup = this.whyCloudDataList.slice(0, 8);
+    this.secondGroup = this.whyCloudDataList.slice(8, 14);
+    // this.thirdGroup = this.whyCloudDataList.slice(11, 15);
     this.attachScrollEventListener();
     AOS.init({offset: 200,
       duration: 600,
@@ -418,9 +442,12 @@ const chars = ourText.chars
       // console.log(res)
       let adsdata = res;
       if(adsdata.details && adsdata.details.flashadslist && adsdata.details.flashadslist.length > 0) {
-        adsdata.details.flashadslist.forEach((add:any) => {
-          this.flashads.push(this.flashads + add.adsTitle + " " + add.adsContent + "  .  ");
+        adsdata.details.flashadslist.forEach((add:any,index:any) => {
+          this.flashads.push(this.flashads + add[0].adsTitle + " " + add[0].adsContent + "  .  ");
         })
+        console.log(this.flashads,"abcd")
+        console.log( adsdata.details.flashadslist)
+        
       }
     })
   }

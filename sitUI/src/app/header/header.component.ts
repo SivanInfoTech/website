@@ -16,6 +16,7 @@ import { ScreenSizeService } from '../screen-size.service';
 })
 export class HeaderComponent implements OnInit {
   
+  
   isMobile: boolean;
   loggedin = false
   currentUser$: Observable<User | null>;
@@ -23,6 +24,7 @@ export class HeaderComponent implements OnInit {
   @ViewChild('menuTrigger1') trigger1: MatMenuTrigger
   enquiryref: MatDialogRef<VerifycertComponent>;
   courselist = ['AWS', 'Azure', 'Kubernetes', 'Python']
+  
   constructor(
     private userService: UserService,
     private toastr: ToastrService,

@@ -55,11 +55,13 @@
     <a href="/home">
       <img class="logo" src="../../assets/images/footerlogo.png" />
     </a>
-    <div class="matnav">
+    <div class="matnav" >
       <mat-list class="list-horizontal">
+        <!-- need to enable -->
+         
         <mat-list-item>
-          <button class="coursebtn" (mouseenter)="openMyMenu()">
-            <div #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="courses">COURSES</div>
+        <button class="coursebtn" (mouseenter)="openMyMenu()">
+            <div #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="courses"><span style="display: flex;align-items: center;"><span >COURSES</span><mat-icon>keyboard_arrow_down</mat-icon></span></div>
           </button>
           <mat-menu #courses="matMenu" class="customize">
             <span (mouseleave)="closeMyMenu()">
@@ -68,21 +70,57 @@
             </span>
           </mat-menu>
         </mat-list-item>
+       
         <mat-list-item>
           <button class="btn bg-transaprent" routerLink="/home">HOME</button>
         </mat-list-item>
+        <!-- 1111111111111 ABOUT US 11111111111111 -->
         <mat-list-item>
           <button class="btn bg-transaprent" routerLink="/aboutus">AboutUs</button>
         </mat-list-item>
-        <mat-list-item>
-          <button class="btn bg-transaprent" routerLink="/cloudacclerator">Cloud Accelerator</button>
-        </mat-list-item>
-          <mat-list-item>
+        <!-- <mat-list-item>
+          <button class="btn bg-transaprent" routerLink="/cloudacclerator" #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="aboutuslist"> <span style="display: flex;align-items: center;"><span >ABOUTUS</span><mat-icon>keyboard_arrow_down</mat-icon></span></button>
+          <mat-menu #aboutuslist="matMenu" class="customize"> -->
+            
+        <!-- <button mat-menu-item class="btn bg-transaprent" routerLink="/cloudacclerator">Cloud Accelerators</button> -->
+        <!-- <button mat-menu-item 
+        #menuTrigger="matMenuTrigger" routerLink="/cloudacclerator""/cloudacclerator">COURSES</button>
+
+          </mat-menu>
+        </mat-list-item> -->
+
+          
+            
+         <!-- need to add details -->
+         <mat-list-item>
+          <button class="btn bg-transaprent" routerLink="/course" #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="serviceslist"> <span style="display: flex;align-items: center;"><span >SERVICES</span><mat-icon>keyboard_arrow_down</mat-icon></span></button>
+          <mat-menu #serviceslist="matMenu" class="customize">
+            <!-- <span (mouseleave)="closeMyMenu()"> -->
+              <button mat-menu-item 
+              #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="courses">COURSES</button>
+                <button mat-menu-item 
+                 (click)="opencert()">VERIFY CERTIFICATE</button>
+                <button mat-menu-item routerLink="/payment" *ngIf="(currentUser$ | async) == null"
+                >COURSE PAYMENT</button>
+            <!-- </span> -->
+          </mat-menu>
+       </mat-list-item>
+      <!-- -------------------- -->
+      <!-- <mat-list-item>
+        <button class="btn bg-transaprent" routerLink="/cloudacclerator">Cloud Accelerators</button>
+      </mat-list-item> -->
+        
+
+
+       
+         <!-- <mat-list-item>
           <button class="btn bg-transaprent" (click)="opencert()">Verify Certificate</button>
         </mat-list-item>
          <mat-list-item *ngIf="(currentUser$ | async) == null">
           <button class="btn bg-transaprent" routerLink="/payment">COURSE PAYMENT</button>
-        </mat-list-item>
+        </mat-list-item> -->
+
+        <!-- removed in the header -->
         
         <!-- <mat-list-item *ngIf="(currentUser$ | async) == null">
           <button class="btn bg-transaprent" routerLink="/register">REGISTER</button>

@@ -117,7 +117,7 @@ export class CoursesComponent implements OnInit {
           this.skillSet1 = this.selectedcoursedetails.skillscovered.slice(0, this.selectedcoursedetails.skillscovered.length/2);
           this.skillSet2 = this.selectedcoursedetails.skillscovered.slice(this.selectedcoursedetails.skillscovered.length/2);
         })
-        console.log(this.selectedcoursedetails);
+        console.log(this.selectedcoursedetails,"zczcz");
         console.log(this.selectedcoursedetails.skillscovered + " :: " + this.skillSet1 + " :: " + this.skillSet2);
         console.log("resetting");
         setTimeout(() => this.resetKeyHighlightsZipSection(), 200);

@@ -22,6 +22,7 @@
 .header {
     /* margin-top: 3vh; */
     /* margin-bottom: 4%; */
+    box-shadow: 0 4px 5px rgba(0, 0, 0, .25);
     width: 100vw;
     overflow-x: hidden;
     /* box-shadow: 0 2px 4px rgba(0,0,0,.08), 0 4px 12px rgba(0,0,0,.08); */
@@ -49,7 +50,8 @@
 
 .logo {
     width: 6vw;
-    margin-bottom: 1vh;
+    margin-bottom: 3vh;
+    padding-top: 6px;
     margin-left: 5vw;
 }
 
@@ -59,7 +61,7 @@
 }
 
 .content {
-    background-color: #82baf3;
+    /* background-color: #82baf3; */
     display: flex;
     position: relative;
     align-items: center;
@@ -76,14 +78,15 @@
 .coursebtn:focus {
     width: 10vw;
     height: 8vh;
-    
-   
+    padding-left: 17px;
     color: #0c0b0b;
     font-size: 100%;
-    font-weight: 400;
+    font-weight: 600;
     border: none;
+    background: none;
+
    
-    background: linear-gradient(to right,  #bad8f5,#bad8f5)!important;
+    /* background: linear-gradient(to right,  #bad8f5,#bad8f5)!important; */
     /* background: linear-gradient(to right, #B24592, #F15F79); */
     align-items: center;
     justify-content: center;
@@ -92,9 +95,8 @@
 
 }
 
-
-
 mat-list.mat-mdc-list.mat-mdc-list-base.mdc-list.list-horizontal {
+    justify-content: space-around;
     flex-direction: row;
     display: flex;
     /* font-family: "Lato", Sans-serif; */
@@ -137,7 +139,7 @@ mat-list.mat-mdc-list.mat-mdc-list-base.mdc-list.list-horizontal {
     border-radius: 0;
     padding: 0;
     margin-right: 2vw;
-    font-weight: 500;
+    font-weight: 600;
 
 }
 
@@ -168,10 +170,15 @@ mat-list.mat-mdc-list.mat-mdc-list-base.mdc-list.list-horizontal {
 }
 .btn:focus{
     /* border: 2px solid #eaede1 !important; */
-    background:#a3d1d1 !important;
+    background:#5db924d9 !important;
     color: white !important;
-    box-shadow:#3eafaf !important;
+    /* box-shadow:#3eafaf !important; */
+    padding: 5px 12px;
+    border-radius: 3px;
+    border: none;
+    box-shadow: none;
 }
+
 
 
 .bg-transaprent{
@@ -190,3 +197,19 @@ mat-list.mat-mdc-list.mat-mdc-list-base.mdc-list.list-horizontal {
         /* background-color:aqua; */
     }
 }
+
+.active {
+    background-color:#5db924d9; /* Active background color */
+    /* color: #c72828; Active text color */
+  }
+  
+  /* Style for hover effect */
+  button[mat-menu-item]:hover {
+    background-color:#5db924d9; /* Hover background color */
+    /* color: #bd1212; Hover text color */
+  }
+  
+  /* Additional hover effect for course button */
+  .coursebtn:hover {
+    background-color:#5db924d9; /* Background color when hovering over the course button */
+  }

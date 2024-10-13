@@ -16,7 +16,7 @@
 
 .slope-bg1{
     position: absolute;
-    height: 92%;
+    height: 83%;
      width: 150vw;
     bottom: 0;
    
@@ -29,6 +29,8 @@
 .Usefullinks {
     width: 31%;
     height: 80%;
+    margin-top: 10px;
+    margin-left: 257px;
 }
 .logofoot {
     width: 35%;
@@ -43,9 +45,10 @@
     /* margin-left: 13px; */
 }
 .logo {
-    width: 150px;
-    /* margin-top: 20px; */
-    margin-bottom: 11px;
+    
+    margin-top: 27px;
+    width: 165px;
+    height: 129px;
 }
 .locationlinks {
     color: white !important;
@@ -66,9 +69,17 @@
 .head {
     color:var(--white);;
     /* font-family: "Lato", Sans-serif; */
-    font-size: 22px;
+    font-size: 25px;
     font-weight: 600;
-    height: 40px;
+    height: 50px;
+    margin-left: 3px;
+}
+.heading{
+    color:var(--white);;
+    /* font-family: "Lato", Sans-serif; */
+    font-size: 25px;
+    font-weight: 600;
+    height: 51px;
 }
 .loc{
     display: -webkit-box;
@@ -87,6 +98,8 @@
     /* margin-top: 8vh; */
     width: 45%;
     height: 80%;
+    margin-top: 10px;
+
     /* margin-top: 8vh; */
 }
 
@@ -105,7 +118,7 @@
     vertical-align: middle;
 } */
 .contactdetail {
-    padding-bottom: 10px;
+    padding-bottom: 12px;
     color:var(--light);
     vertical-align: bottom;
 }
@@ -157,6 +170,7 @@
         padding: 2vw;
         margin-top: 2vh;
         width: 80%;
+
     }
     .links {
         font-size: 120%;
