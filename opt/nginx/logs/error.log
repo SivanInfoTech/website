@@ -1,8 +1,0 @@
-2024/10/13 10:59:21 [notice] 246#246: signal process started
-2024/10/13 10:59:24 [notice] 248#248: signal process started
-2024/10/13 11:02:44 [notice] 12#12: signal process started
-2024/10/13 11:02:44 [error] 12#12: invalid PID number "" in "/var/run/nginx.pid"
-2024/10/13 11:02:46 [notice] 16#16: signal process started
-2024/10/13 11:02:51 [notice] 12#12: signal process started
-2024/10/13 11:02:51 [alert] 12#12: kill(14, 1) failed (3: No such process)
-2024/10/13 11:02:53 [notice] 16#16: signal process started
