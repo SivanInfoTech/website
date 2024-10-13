@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   mongo:
-    image: ravillaramu1/sit:sit-mongo-latest
+    image: sivaninfotech/sit:sit-mongo-latest
     container_name: mongodb
     ports:
       - "27017:27017"
@@ -14,7 +14,7 @@ services:
       - my-network
 
   mongo-express:
-    image: ravillaramu1/sit:sit-mongo-express-latest
+    image: sivaninfotech/sit:sit-mongo-express-latest
     container_name: mongo-express
     ports:
       - "8081:8081"
@@ -30,7 +30,7 @@ services:
       - my-network
 
   frontend:
-    image: ravillaramu1/sit:sit-frontend-latest
+    image: sivaninfotech/sit:situi-frontend-latest
     container_name: frontend
     ports:
       - "4200:4200"
@@ -42,7 +42,7 @@ services:
       - my-network
 
   backend:
-    image: ravillaramu1/sit:sit-backend-latest
+    image: sivaninfotech/sit:sit-backend-latest
     container_name: backend
     ports:
       - "8080:8080"
@@ -52,7 +52,7 @@ services:
     networks:
       - my-network
   nginx:
-    image: ravillaramu1/sit:sit-nginx-latest
+    image: sivaninfotech/sit:sit-nginx-latest
     container_name: nginx
     ports:
       - "8082:8082"

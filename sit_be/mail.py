@@ -14,11 +14,11 @@ from email import encoders
 
 
 def sendverificationmail(request, VERIFICATION_SECRET_KEY):
-    server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+    server = smtplib.SMTP_SSL('smtp-mail.outlook.com', 465)
     server.ehlo()
-    server.login("testsitcloud@gmail.com", "psjycqeeepiefyda")
+    server.login("info@sitcloud.in", "dlstmcxhbyrltndf")
 
-    sender_email = "testsitcloud@gmail.com"
+    sender_email = "info@sitcloud.in"
     receiver_email = request.json["firstName"]
     message = MIMEMultipart()
     message["Subject"] = "Test SIT Registration verification link"
@@ -29,7 +29,7 @@ def sendverificationmail(request, VERIFICATION_SECRET_KEY):
         'exp': datetime.utcnow() + timedelta(minutes=30)
     }, VERIFICATION_SECRET_KEY)
     # convert both parts to MIMEText objects and add them to the MIMEMultipart message
-    confirm_url = "https://service.sitcloud.in/verify?token=" + token
+    confirm_url = "https://sitcloud.in:8082/verify?token=" + token
     body = """\
             <html>
               <head></head>
@@ -43,17 +43,17 @@ def sendverificationmail(request, VERIFICATION_SECRET_KEY):
             """
     message.attach(MIMEText(body, 'html'))
     text = message.as_string()
-    server.sendmail("testsitcloud@gmail.com", request.json['email'], text)
+    server.sendmail("info@sitcloud.in", request.json['email'], text)
     server.close()
 
 
 def sendenquirymail(request):
-    server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+    server = smtplib.SMTP_SSL('smtp-mail.outlook.com', 465)
     server.ehlo()
-    server.login("testsitcloud@gmail.com", "psjycqeeepiefyda")
+    server.login("info@sitcloud.in", "dlstmcxhbyrltndf")
 
-    sender_email = "testsitcloud@gmail.com"
-    receiver_email = "testsitcloud@gmail.com"
+    sender_email = "info@sitcloud.in"
+    receiver_email = "info@sitcloud.in"
     message = MIMEMultipart()
     message["Subject"] = "Enquiry request from " + request.json['name']
     message["From"] = sender_email
@@ -76,15 +76,15 @@ def sendenquirymail(request):
                 """
     message.attach(MIMEText(body, 'html'))
     text = message.as_string()
-    server.sendmail("testsitcloud@gmail.com", receiver_email, text)
+    server.sendmail("info@sitcloud.in", receiver_email, text)
     server.close()
 
 
 def sendcertmail(request):
     message = MIMEMultipart()
     message['Subject'] = "Attachment Test"
-    message['From'] = 'testsitcloud@gmail.com'
-    message['To'] = 'avmounika2410@gmail.com'
+    message['From'] = 'info@sitcloud.in'
+    message['To'] = 'info@sitcloud.in'
 
     text = MIMEText("Message Body")
     message.attach(text)
@@ -96,9 +96,9 @@ def sendcertmail(request):
     attachedfile.add_header('content-disposition', 'attachment', filename = "ExamplePDF.pdf")
     message.attach(attachedfile)
 
-    server = smtplib.SMTP("smtp.gmail.com:587")
+    server = smtplib.SMTP("smtp-mail.outlook.com:587")
     server.ehlo()
     server.starttls()
-    server.login("testsitcloud@gmail.com", "psjycqeeepiefyda")
+    server.login("info@sitcloud.in", "dlstmcxhbyrltndf")
     server.sendmail(message['From'], message['To'], message.as_string())
     server.quit()

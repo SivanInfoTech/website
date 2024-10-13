@@ -8,7 +8,7 @@ RUN tar -xvzf /data/db/admin.tar -C /data/db
 
 EXPOSE 27017
 
-CMD mongod --bind_ip_all --logpath /var/log/mongod.log & sleep 5 && mongorestore --db admin /data/db/home/ubuntu/databasedump/admin && wait
+CMD mongod --bind_ip_all --logpath /var/log/mongod.log & sleep 5 && mongorestore --db admin /data/db/admin && wait
 
 
 
