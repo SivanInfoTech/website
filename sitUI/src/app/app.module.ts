@@ -51,11 +51,29 @@ import { OpticosComponent } from './opticos/opticos.component';
 import { RuppelsComponent } from './ruppels/ruppels.component';
 import { SwiftMiComponent } from './swift-mi/swift-mi.component';
 import { Terrgen2Component } from './terrgen2/terrgen2.component';
-
+import {
+  NgxUiLoaderModule,
+  NgxUiLoaderConfig,
+  SPINNER,
+  POSITION,
+  PB_DIRECTION,
+  NgxUiLoaderHttpModule,
+  NgxUiLoaderService,
+} from 'ngx-ui-loader';
 export function initAuth(jwtService: JwtService, userService: UserService) {
   return () => (jwtService.getToken() ? userService.getCurrentUser() : EMPTY);
 }
-
+const ngxUiLoaderConfig: NgxUiLoaderConfig = {
+  fgsColor: '#F0841D',
+  fgsPosition: POSITION.centerCenter,
+  fgsSize: 60,
+  fgsType: SPINNER.squareJellyBox,
+  pbDirection: PB_DIRECTION.leftToRight,
+  pbThickness: 5,
+  logoPosition: 'center-center',
+  logoSize: 60,
+  logoUrl: 'assets/images/footerlogo.png',
+};
 @NgModule({
   declarations: [
     AppComponent,
@@ -107,7 +125,13 @@ export function initAuth(jwtService: JwtService, userService: UserService) {
     MatInputModule,
     // NgxCaptchaModule,
     FormsModule,
-    MatCardModule
+    MatCardModule,
+    NgxUiLoaderHttpModule.forRoot({
+      showForeground: true,
+      exclude: [
+           ],
+    }),
+    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
   ],
   providers: [
     {

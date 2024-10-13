@@ -1,14 +1,14 @@
 <div>
 
-<!-- </div> *ngIf="selectedcoursedetails"> -->
+<!-- </div> *ngIf="selectedcoursedetails?"> -->
 
 
     <div class="course-page">
         <div class="top-higlight-section">
             <div class="row">
-                <img class="course-img col-6 col-md-4" src='../../assets/images/{{selectedcoursedetails.courseid}}.png'>
+                <img class="course-img col-6 col-md-4" src='../../assets/images/{{selectedcoursedetails?.courseid}}.png'>
                 <div class="centering row col-12 col-md-8">
-                    <div class="course-title">{{selectedcoursedetails.title}}</div>
+                    <div class="course-title">{{selectedcoursedetails?.title}}</div>
                     <!-- <div class="rating col-10 col-md-12">
                         <mat-icon class="gold">star</mat-icon>
                         <mat-icon class="gold">star</mat-icon>
@@ -41,14 +41,14 @@
             </div>
             <div class="row">
                 <div class="col-12 course-desc">
-                    <div *ngFor="let para of selectedcoursedetails.overview">{{para}}<br><br></div>
+                    <div *ngFor="let para of selectedcoursedetails?.overview">{{para}}<br><br></div>
                 </div>
             </div>
             <div class="row batch-selector-row">
                 <label for="courses" class="select-btach-label">Choose a batch</label>
                 <select name="batche" id="courses" [(ngModel)]="batchtoenroll">
                     <option value="" [disabled]="true" selected> Select Batch</option>
-                    <option *ngFor="let i of selectedcoursedetails.batches" [ngValue]="i">{{i.startdate}} -
+                    <option *ngFor="let i of selectedcoursedetails?.batches" [ngValue]="i">{{i.startdate}} -
                         {{i.enddate}}</option>
                 </select>
                 <div class="centering-button">
@@ -102,7 +102,7 @@
         <div class="section-top row" id="benefits">
             <div class="sub-section-left col-10 col-md-5">
                 <div class="sub-section-header">Benefits</div>
-                <div class="sub-section-content">{{selectedcoursedetails.benefits}}</div>
+                <div class="sub-section-content">{{selectedcoursedetails?.benefits}}</div>
             </div>
             <div class="img-container col-10 col-md-3">
                 <img class="sub-section-img" src="../../assets/images/gradimg-benefits.png">
@@ -117,7 +117,7 @@
             <div class="sub-section-right col-10 col-md-4">
                 <div class="sub-section-header">Related Job Roles</div>
                 <div class="sub-section-content">
-                    <div *ngFor="let job of selectedcoursedetails.jobs" id="job">
+                    <div *ngFor="let job of selectedcoursedetails?.jobs" id="job">
                         {{job}}
                     </div>
                 </div>
@@ -126,9 +126,9 @@
 
         <div class="section-top row" id="skillscovered">
             <div class="sub-section-left col-10 col-md-5">
-                <div class="sub-section-header">Skills covered in {{selectedcoursedetails.courseid}} training</div>
+                <div class="sub-section-header">Skills covered in {{selectedcoursedetails?.courseid}} training</div>
                 <div class="sub-section-content">
-                    <div *ngFor="let skill of selectedcoursedetails.skillscovered">
+                    <div *ngFor="let skill of selectedcoursedetails?.skillscovered">
                         {{skill}}
                     </div>
                 </div>
@@ -140,12 +140,12 @@
         <!-- <div class="skillblk align-items-center" id="skillscovered">
             <div class="left-section">
                 <div >
-                    <h2 class="bold_h4 text-center">Skills covered in {{selectedcoursedetails.courseid}} training?</h2>
+                    <h2 class="bold_h4 text-center">Skills covered in {{selectedcoursedetails?.courseid}} training?</h2>
                 </div>
             </div>
             <div class="right-section">
                 <div class="skills row justify-content-center">
-                    <div id="skill" *ngFor="let skill of selectedcoursedetails.skillscovered">
+                    <div id="skill" *ngFor="let skill of selectedcoursedetails?.skillscovered">
                         <div class="skill-tag">{{skill}}</div>
                     </div>
                 </div>
@@ -161,7 +161,7 @@
                 </div>
             </div>
             <div class="skill-heading">
-                <h2 class="skill-heading-text">Skills covered in {{selectedcoursedetails.courseid}} training?</h2>
+                <h2 class="skill-heading-text">Skills covered in {{selectedcoursedetails?.courseid}} training?</h2>
             </div>
             <div class="skill-right-col">
                 <div id="skillRight" *ngFor="let skill of skillSet2">
@@ -176,7 +176,7 @@
             <h2 class="bold_h4 header-center">Key Highlights of this course</h2>
             <div class="highlight row justify-content-center">
                 <div class="highlight-left">
-                    <div id="point" class="left-texts" *ngFor="let highlight of selectedcoursedetails.highlights.slice(0, selectedcoursedetails.highlights.length / 2); let i = index">
+                    <div id="point" class="left-texts" *ngFor="let highlight of selectedcoursedetails?.highlights.slice(0, selectedcoursedetails.highlights.length / 2); let i = index">
                         <!-- <div id="point{{i}}"> -->
                             <div id="leftText{{i}}" class="key-hl-text-bg">
                                 <div  class="key-hightlight" > {{highlight}}</div>
@@ -189,7 +189,7 @@
                     </div>
                 </div>
                 <div class="highlight-right">
-                    <div id="point" class="right-texts" *ngFor="let highlight of selectedcoursedetails.highlights.slice(selectedcoursedetails.highlights.length / 2, selectedcoursedetails.highlights.length+1);  let i = index">
+                    <div id="point" class="right-texts" *ngFor="let highlight of selectedcoursedetails?.highlights.slice(selectedcoursedetails.highlights.length / 2, selectedcoursedetails.highlights.length+1);  let i = index">
                         <div  id="rightImg{{i}}" class="key-hl-img-container">
                             <img class='rightImg' src='../../assets/images/{{highlight}}.png' width="30px" height="30px"
                                 alt="..." />
@@ -209,14 +209,14 @@
             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 syllabusInner">
                 <div class="head">
                     <h2 class="bold_h4">Syllabus</h2>
-                    <div class="syllabus_download_btn" (click)="downloaddoc(selectedcoursedetails.courseid)">
+                    <div class="syllabus_download_btn" (click)="downloaddoc(selectedcoursedetails?.courseid)">
                         <img class='download-syllabus-icon' src='../../assets/images/download_icon_black.png' />
                         Download Syllabus
                     </div>
                 </div>
                 <div class="syllablist">
                     <mat-accordion>
-                        <mat-expansion-panel *ngFor="let item of selectedcoursedetails.syllabuslist let i = index">
+                        <mat-expansion-panel *ngFor="let item of selectedcoursedetails?.syllabuslist let i = index">
                             <mat-expansion-panel-header>
                                 <mat-panel-title> <span class="moduletitle">Module {{i+1}} :</span> {{item.title}}
                                 </mat-panel-title>
@@ -253,7 +253,7 @@
         <h2 class="bold_h4">Upcoming Batches</h2>
         <table class="table upbatchsList">
             <tbody>
-                <tr *ngFor="let batch of selectedcoursedetails.batches">
+                <tr *ngFor="let batch of selectedcoursedetails?.batches">
                     <td>{{batch.startdate}} - {{batch.enddate}}</td>
                     <td>{{batch.daytype}}</td>
                     <td>{{batch.days}}</td>

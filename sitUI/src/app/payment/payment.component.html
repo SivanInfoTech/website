@@ -1,9 +1,6 @@
-
-
-
 <div class="container">
-  <div class="row col-md-12">
-    <div class="col-md-6">
+  <div class="row ">
+    <div class="col-md-4">
       <div class="price-card">
       
         <h2>AWS Solution Architect</h2>
@@ -12,7 +9,7 @@
    
        </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
       <div class="price-card">
       
         <h2>Azure Architect</h2>
@@ -21,42 +18,43 @@
    
        </div>
     </div>
-    <div class="row col-md-12">
-      <div class="col-md-6">
-        <div class="price-card">
-        
-          <h2>AWS Solution Architect</h2>
-           <p>Price: 20,000 + 18% GST Apllicable</p>  
-            <button (click)="initiatePayment(20000)">Pay</button>
-     
-         </div>
-      </div>
-      <div class="col-md-6">
-        <div class="price-card">
-        
-          <h2>Azure Architect</h2>
-        <p>Price: 20,000 + 18% GST Apllicable</p>
-        <button (click)="initiatePayment(20000)">Pay</button>
-     
-         </div>
-      </div>
-  </div>
-
-    
-  
-    <div class="price-card">
-      <h2>Azure Architect</h2>
-      <p>Price: 20,000 + 18% GST Apllicable</p>
-      <button (click)="initiatePayment(20000)">Pay</button>
-    </div>
-  
+    <div class="col-md-4">
     <div class="price-card">
       <h2>Kubernetes Administrator</h2>
       <p>Price: 20,000 + 18% GST Apllicable</p>
       <button (click)="initiatePayment(20000)">Pay</button>
     </div>
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="other-payments">
+          <h2>Other Payments + 18% GST Apllicable</h2>
+      
+          <label for="amount">Enter Amount:</label>
+          <input type="number" [(ngModel)]="otherAmount" placeholder="Enter amount">
+          <button (click)="initiatePayment(otherAmount)">Pay</button>
+          
+        </div>
+      </div>
+  </div>
+  </div>
+
+    
   
-    <div class="other-payments">
+    <!-- <div class="price-card">
+      <h2>Azure Architect</h2>
+      <p>Price: 20,000 + 18% GST Apllicable</p>
+      <button (click)="initiatePayment(20000)">Pay</button>
+    </div> -->
+  
+    <!-- <div class="price-card">
+      <h2>Kubernetes Administrator</h2>
+      <p>Price: 20,000 + 18% GST Apllicable</p>
+      <button (click)="initiatePayment(20000)">Pay</button>
+    </div> -->
+  
+    <!-- <div class="other-payments">
       <h2>Other Payments + 18% GST Apllicable</h2>
   
       <label for="amount">Enter Amount:</label>
@@ -64,5 +62,5 @@
       <button (click)="initiatePayment(otherAmount)">Pay</button>
       
     </div>
-  
-  </div>
+   -->
+ 

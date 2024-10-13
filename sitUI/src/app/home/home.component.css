@@ -317,22 +317,25 @@
   /* transform: skewY(30deg); */
   /* transform: rotate(3deg) translateX(-2%); */
   /* background-color: #ddd7d7; */
-  background-color: #6b6b6b;
+  /* background-color: #6b6b6b; */
   font-size: 100%;
   padding: 2px;
-  display: flex;
+  /* display: flex; */
 }
 
 marquee {
   height: fit-content;
+  font-weight: bold;
   padding: 5px;
   /* background-color: #2d2ae6; */
-  background-image:linear-gradient(349deg, var(--gray) 1.83%, var(--gray) 52% 53.68%, var(--gray) 106.48%);
-  color: #F75F72;
+  /* background-image:linear-gradient(349deg, var(--gray) 1.83%, var(--gray) 52% 53.68%, var(--gray) 106.48%); */
+  /* color: #F75F72; */
    /* linear-gradient(349deg, #0e8e80 1.83%, #2896ed 52% 53.68%, #10e054 106.48%); */
   /* color: #F75F72; */
-  color: #eaeaef;
+  color:black;
   margin-left: 3px;
+  box-shadow: 0px 0px 10px rgb(150, 150, 150);
+  background-color: white;
 }
 
 .aboutus {
@@ -498,8 +501,8 @@ box-shadow: 0px 0px 20px 1px rgba(0,0,0, 0.2);
 
 }
 
-.card:hover{
-}
+/* .card:hover{ */
+/* } */
 
 
 .top-courses-section{
@@ -947,8 +950,8 @@ padding: 5px;
   }
 }
 
-.benefit-parent{
-}
+/* .benefit-parent{ */
+/* } */
 
 .benefits{
   /* opacity: 0; */
@@ -961,7 +964,9 @@ padding: 5px;
 .highlight-icon{
   height: 5vmin;
   width: auto;
-  margin-left: 3vmin;
+  margin-left: 2vmin;
+  margin-top: 2vmin;
+  background-color: black;
 }
 
 p {

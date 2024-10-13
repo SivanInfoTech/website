@@ -9,6 +9,7 @@ import  splitType from "split-type";
 
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 gsap.registerPlugin(ScrollTrigger);
 
 declare const Application: any;
@@ -104,6 +105,7 @@ whyCloudDataList:any=[
     public dialog: MatDialog,
     private AdsService: ADSService,
     private screenSizeService: ScreenSizeService,
+    private ngxLoader: NgxUiLoaderService,
   ) { }
 
   // ngOnInit() {
@@ -209,6 +211,7 @@ whyCloudDataList:any=[
   
 
   ngOnInit() {
+    this.ngxLoader.start();
     this.firstGroup = this.whyCloudDataList.slice(0, 8);
     this.secondGroup = this.whyCloudDataList.slice(8, 14);
     // this.thirdGroup = this.whyCloudDataList.slice(11, 15);
