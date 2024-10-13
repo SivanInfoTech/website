@@ -3,6 +3,12 @@
 # Run Certbot to obtain certificates
 certbot --nginx --non-interactive --agree-tos --email test3@sitcloud.in -d sitcloud.in
 
+# Check if Certbot was successful
+if [ $? -ne 0 ]; then
+    echo "Certbot failed. Exiting..."
+    exit 1
+fi
+
 # Define the Nginx configuration file path
 NGINX_CONF="/etc/nginx/nginx.conf"
 
@@ -17,9 +23,16 @@ if grep -q "listen 8082;" $NGINX_CONF; then
 
     # Update listen directive to include SSL
     sed -i 's/listen 8082;/listen 8082 ssl;/' $NGINX_CONF
+
+    # Reload Nginx to apply changes
+    nginx -s reload
+
+    # Check if Nginx reload was successful
+    if [ $? -eq 0 ]; then
+        echo "Nginx reloaded successfully with SSL for port 8082."
+    else
+        echo "Failed to reload Nginx. Please check the configuration."
+    fi
 else
     echo "Server block for port 8082 not found in the configuration."
 fi
-
-# Reload Nginx to apply changes
-nginx -s reload

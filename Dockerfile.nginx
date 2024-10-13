@@ -9,8 +9,14 @@ COPY configure_nginx_ssl.sh /configure_nginx_ssl.sh
 
 RUN chmod +x /configure_nginx_ssl.sh
 
+RUN ls -ltr /
+
 EXPOSE 443 80 8082
 
-CMD ["sh", "-c", "/configure_nginx_ssl.sh && nginx -g 'daemon off;'"]
+# CMD ["sh", "-c", "/configure_nginx_ssl.sh && nginx -g 'daemon off;'"]
+
+CMD /bin/sh /configure_nginx_ssl.sh && nginx -g 'daemon off;'
+
+
 
 # CMD ["sh", "-c", "certbot --nginx --non-interactive --agree-tos --email info@sitcloud.in -d sitcloud.in -d www.sitcloud.in && nginx -g 'daemon off;'"]
