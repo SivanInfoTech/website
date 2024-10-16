@@ -24,7 +24,7 @@ import uuid
 from phonepe.sdk.pg.env import Env
 
 frontendURL = "https://sitcloud.in"
-backendURL = "https://sitcloud.in:8082"
+backendURL = "https://sitcloud.in/api/"
 # import ironpdf
 
 tz_NY = pytz.timezone('Asia/Kolkata')
@@ -83,7 +83,7 @@ def token_required(f):
     return decorated
 
 
-@app.route("/signup", methods=['POST'])
+@app.route("/api/signup", methods=['POST'])
 @cross_origin()
 def signup():
     print(request.json)
@@ -109,7 +109,7 @@ def signup():
     return Response(json.dumps({"Message": "Please check your mail for Verification link", "status": 200}), status=200)
 
 
-@app.route('/signin', methods=['POST'])
+@app.route('/api/signin', methods=['POST'])
 @cross_origin()
 def signin():
     print(request.json)
@@ -140,7 +140,7 @@ def signin():
     return Response(json.dumps({"Message": "User not exits", "status": 400}), status=400)
 
 
-@app.route('/studentsList', methods=['GET'])
+@app.route('/api/studentsList', methods=['GET'])
 @cross_origin()
 @token_required
 def studentsList(currentuser):
@@ -153,7 +153,7 @@ def studentsList(currentuser):
     return Response(json.dumps({"Message": "Users fetched", 'user': res, "status": 200}), status=200)
 
 
-@app.route('/verify', methods=['GET'])
+@app.route('/api/verify', methods=['GET'])
 @cross_origin()
 def verify_email():
     print(request.args["token"])
@@ -168,7 +168,7 @@ def verify_email():
     return Response("Verified, Please try to login", status=200)
 
 
-@app.route('/getToken', methods=['GET'])
+@app.route('/api/getToken', methods=['GET'])
 @cross_origin()
 @token_required
 def getToken(currentuser):
@@ -195,7 +195,7 @@ def getToken(currentuser):
     return Response(json.dumps({"Message": "User not exits", "status": 400}), status=400)
 
 
-@app.route('/logOut', methods=['GET'])
+@app.route('/api/logOut', methods=['GET'])
 @cross_origin()
 @token_required
 def logout(currentuser):
@@ -205,7 +205,7 @@ def logout(currentuser):
     return Response(json.dumps({"Message": "Logged out successfully", "status": 200}), status=200)
 
 
-@app.route('/enroll', methods=['POST'])
+@app.route('/api/enroll', methods=['POST'])
 @cross_origin()
 @token_required
 def enroll(currentuser):
@@ -231,7 +231,7 @@ def enroll(currentuser):
     return Response(json.dumps({"Message": "Enrolled successfully", 'EnrollmentID': enrollmentID, "status": 200}), status=200)
 
 
-@app.route('/enrollmentsList', methods=['GET'])
+@app.route('/api/enrollmentsList', methods=['GET'])
 @cross_origin()
 @token_required
 def enrollments(currentuser):
@@ -246,7 +246,7 @@ def enrollments(currentuser):
     return Response(json.dumps({"Message": "Fetched enrollments successfully", 'user': userdata, "status": 200}), status=200)
 
 
-@app.route('/updateEnrollment', methods=['POST'])
+@app.route('/api/updateEnrollment', methods=['POST'])
 @cross_origin()
 @token_required
 def updateEnrollment(currentuser):
@@ -275,7 +275,7 @@ def updateEnrollment(currentuser):
     return Response(json.dumps({"Message": "Enrollment updated successfully", "status": 200}), status=200)
 
 
-@app.route('/enquiry', methods=['POST'])
+@app.route('/api/enquiry', methods=['POST'])
 @cross_origin()
 def submitEnquiry():
     print(request.json)
@@ -283,7 +283,7 @@ def submitEnquiry():
     return Response(json.dumps({"Message": "Enquiry submitted, Team will contact you soon", "status": 200}), status=200)
 
 
-@app.route('/courseDetails', methods=['GET'])
+@app.route('/api/courseDetails', methods=['GET'])
 @cross_origin()
 def getCourseContent():
     courses = mongo.db.courses
@@ -291,7 +291,7 @@ def getCourseContent():
     return Response(json.dumps({"Message": "Fetched content", "details": courseContent, "status": 200}), status=200)
 
 
-@app.route('/courselist', methods=['GET'])
+@app.route('/api/courselist', methods=['GET'])
 @cross_origin()
 @token_required
 def getCourseList(currentuser):
@@ -304,7 +304,7 @@ def getCourseList(currentuser):
     return Response(json.dumps({"Message": "Fetched content", "courses": res, "status": 200}), status=200)
 
 
-@app.route('/getcourseDoc', methods=['GET'])
+@app.route('/api/getcourseDoc', methods=['GET'])
 @cross_origin()
 @token_required
 def getCourseDocument(currentuser):
@@ -331,7 +331,7 @@ def getCourseDocument(currentuser):
         "status": 200}), status=200)
 
 
-@app.route('/uploadcourseDoc', methods=['POST'])
+@app.route('/api/uploadcourseDoc', methods=['POST'])
 @cross_origin()
 @token_required
 def uploadCourseDocument(currentuser):
@@ -352,7 +352,7 @@ def uploadCourseDocument(currentuser):
     return Response(json.dumps({"Message": "Course document Uploaded", "status": 200}), status=200)
 
 
-@app.route('/saveads', methods=['POST'])
+@app.route('/api/saveads', methods=['POST'])
 @cross_origin()
 @token_required
 def saveFlashAds(currentuser):
@@ -371,7 +371,7 @@ def saveFlashAds(currentuser):
     return Response(json.dumps({"Message": "Ads Saved Successfully", "status": 200}), status=200)
 
 
-@app.route('/getflashads', methods=['GET'])
+@app.route('/api/getflashads', methods=['GET'])
 @cross_origin()
 def getFlashAds():
     ads = mongo.db.ads
@@ -380,7 +380,7 @@ def getFlashAds():
     return Response(json.dumps({"Message": "Fetched content", "details": res[0], "status": 200}), status=200)
 
 
-@app.route('/verifyCert', methods=['POST'])
+@app.route('/api/verifyCert', methods=['POST'])
 @cross_origin()
 def verifyCert():
     print(request)
@@ -412,7 +412,7 @@ def verifyCert():
     return Response(json.dumps(res), status=res['status'])
 
 
-@app.route('/downloadCertificate', methods=['GET'])
+@app.route('/api/downloadCertificate', methods=['GET'])
 @cross_origin()
 # @token_required
 def downloadCertificate():
@@ -468,7 +468,7 @@ def downloadCertificate():
     return render_template("finalCert.html")
 
 
-@app.route('/emailCert', methods=['POST'])
+@app.route('/api/emailCert', methods=['POST'])
 @cross_origin()
 def emailCert():
     certificationID = request.json["certificationID"]
@@ -505,7 +505,7 @@ def emailCert():
     #print(email,certificationID)
     # pdfkit.from_url("https://service.sitcloud.in/downloadCertificate?userid=" + email + "&certificationID=" + certificationID, 'templates/test.pdf', configuration=config)
     config = pdfkit.configuration(wkhtmltopdf="/usr/bin/wkhtmltopdf") 
-    response = requests.get("https://service.sitcloud.in/downloadCertificate", params={'userid': email, 'certificationID': certificationID})
+    response = requests.get("https://sitcloud.in/api/downloadCertificate", params={'userid': email, 'certificationID': certificationID})
     html_path = f'templates/tempCert.html'
     html_file = open(html_path, 'w')
     html_file.write(response.text)
@@ -528,7 +528,7 @@ def emailCert():
     return "AB"
 
 
-@app.route('/getCourseAndBatchDetails', methods=['GET'])
+@app.route('/api/getCourseAndBatchDetails', methods=['GET'])
 @cross_origin()
 def getCourseAndBatchDetails():
     courses = mongo.db.courses
@@ -539,7 +539,7 @@ def getCourseAndBatchDetails():
 
 # Phonepe Payment Intergration
 
-@app.route('/initiate-payment', methods=['POST'])
+@app.route('/api/initiate-payment', methods=['POST'])
 @cross_origin()
 def initiate_payment_get():
     unique_transaction_id = str(uuid.uuid4())[:-2]
@@ -563,7 +563,7 @@ def initiate_payment_get():
     return jsonify({'pay_page_url': pay_page_url}), 200
 
     
-@app.route('/callback/<transaction_id>', methods=['GET'])
+@app.route('/api/callback/<transaction_id>', methods=['GET'])
 @cross_origin()
 def check_payment_status(transaction_id):
     # frontend_url = f'http://localhost:4200/callback/{transaction_id}'
@@ -588,7 +588,7 @@ def check_payment_status(transaction_id):
     # return redirect(frontend_url)
     return jsonify(pay_page_response)
 
-@app.route('/frontendredirect/<transaction_id>', methods=['GET'])
+@app.route('/api/frontendredirect/<transaction_id>', methods=['GET'])
 @cross_origin()
 def redirecturl(transaction_id):
     # frontend_url = f'http://localhost:4200/paymentstatus/{transaction_id}'
