@@ -1,0 +1,33 @@
+<div class="studentdata">
+    <h2 class="bold_h4">Student Details</h2>
+    <div class="details row">
+        <div  class="feild">
+            <label id="point" >Name: </label> 
+            <span>{{data.firstName}} {{data.lastName}}</span>
+        </div>
+        <div  class="feild">
+            <label id="point" >Email: </label> 
+            <span>{{data.email}}</span>
+        </div>
+        <div  class="feild">
+            <label id="point" >Phone: </label> 
+            <span class="value">{{data.phone}}</span>
+        </div>
+        <div  class="feild">
+            <label id="point" >Role: </label> 
+            <span>{{data.role}}</span>
+        </div>
+        <!-- <div  class="feild">
+            <label id="point" >RegisteredOn: </label> 
+            <span>{{data.role}}</span>
+        </div> -->
+    </div>
+    <br>
+
+    <h2 class="bold_h4">Enrollment Details</h2>
+
+    <div class="enrollmentdata">
+        <app-enrollments [userid]="data.email"></app-enrollments>
+    </div>
+
+</div>

@@ -1,0 +1,27 @@
+<div class="flashnews">
+    <form [formGroup]="flashnewslist">
+        <div style="display: flex; margin-bottom: 20px;">
+            <h5> Flash News Configuration</h5>
+            <button (click)="addGroup(null)" class="add_btn"><mat-icon>add_circle</mat-icon></button>
+        </div>
+        <div class="row">
+        <div formArrayName="flashnews" class="col-lg-6 row flashaddrow" 
+            *ngFor="let time of flashnewslist.controls.flashnews?.value; let i = index; trackBy:trackByFn">
+            <div [formGroupName]="i" >
+                <mat-form-field appearance="outline" style="margin-right: 10px;">
+                    <mat-label >Title</mat-label>
+                    <input matInput formControlName="adsTitle">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Content</mat-label>
+                    <input matInput formControlName="adsContent">
+                </mat-form-field>
+            <button (click)="removeGroup(i)" class="rmv_btn">
+                <mat-icon>remove_circle</mat-icon>
+            </button>
+            </div>
+        </div>
+    </div>
+        <button mat-raised-button (click)="onSubmit()" class="flashbtn"  color="primary">Submit</button>
+    </form>
+</div>

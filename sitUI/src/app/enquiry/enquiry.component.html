@@ -1,0 +1,62 @@
+<button class="clsbtn" [mat-dialog-close]="true" *ngIf="data.ispopup">
+    <mat-icon>close</mat-icon>
+</button>
+<div class="form-main">
+    <form [formGroup]="queryform" (ngSubmit)="onSubmit()">
+        <!-- <ngx-recaptcha2 formControlName="recaptcha"></ngx-recaptcha2> -->
+        <h5 class="gap">Quick Enquiry</h5>
+        <div class="form-group row">
+            <label class="form-label required-field col-3 col-md-2">Name</label>
+            <input type="text" formControlName="name" class="col-8 col-md-8" placeholder="name*"
+                [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+            <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                <div *ngIf="f.name.errors.required">Name is required</div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="form-label required-field col-3 col-md-2">Email</label>
+            <input type="text" formControlName="email" class="col-8 col-md-8" placeholder="email*"
+                [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors.required">Email is required</div>
+                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="form-label required-field col-3 col-md-2">Phone</label>
+            <input type="text" formControlName="phone" class="col-8 col-md-8" placeholder="phone*"
+                [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+            <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                <div *ngIf="f.phone.errors.required">Phone is required</div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="form-label required-field col-3 col-md-2">Course</label>
+            <select name="courses" id="courses" formControlName="course"  class="col-8 col-md-8">
+                <option *ngFor="let i of coursebatchdetails" [value]="i.courseid">{{i.courseid}}</option>
+            </select>
+            <div *ngIf="submitted && f.course.errors" class="invalid-feedback">
+                <div *ngIf="f.course.errors.required">Course is required</div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="form-label col-3 col-md-2">Batch</label>
+            <select name="batch" id="courses" formControlName="batch" class="col-8 col-md-8">
+                <option *ngFor="let i of batches" [value]="i.startdate">{{i.startdate}}</option>
+            </select>
+        </div>
+        <div class="form-group row">
+            <label class="form-label col-3 col-md-2">Enquiry</label>
+            <input type="text" formControlName="enquiry" class="col-8 col-md-8" placeholder="enquiry*"
+                [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+            <div *ngIf="submitted && f.enquiry.errors" class="invalid-feedback">
+                <div *ngIf="f.enquiry.errors.required">Add your about your enquiry</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col text-center">
+                <button class="submit-btn" id="align" [disabled]="submitted" (click)="onSubmit()">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>

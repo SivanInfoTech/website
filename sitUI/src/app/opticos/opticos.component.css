@@ -1,0 +1,102 @@
+.main-container{
+    margin-top:5%;
+    
+}
+.product-title{
+    font-size: 3rem;
+}
+ /* cloud cost management heading */
+.Opt-sub-title1{
+    text-align:start;
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 3%;
+    color:#193C6B!important;
+    line-height: 1.3em;
+    
+}
+
+.optimization_image{ /* cloud optimization image */
+    height: 238px;
+    width: 340px;
+     margin-bottom:2rem;
+     margin-top: 31px;
+     margin-left: 3%;
+     margin-right: 2px;
+    
+}
+ /* cloud cost optimization sub titles  */
+.Opt-sub-title{
+    /* text-align:center; */
+    font-size: 30px;
+    font-weight:700;
+    margin-top: 8%;
+    color: #193C6B !important;
+    line-height: 1.3em;
+    
+}
+/* cloud cost optimization sub titles  */
+.Opt-sub_content{
+    font-size:16px;
+    line-height: 1.8em;
+    font-weight:500 !important;
+    text-align:left;
+}
+/* cloud cost management image*/
+.Management-image{
+    height: 220px;
+    width: 366px;
+    /* margin-right: 10%; */
+    margin-top: 24px;
+
+    
+}
+/* cloud cost management sub contents*/
+.Opt-sub_content1{
+    font-size: 16px;
+    line-height: 1.8em;
+    font-weight: 500 !important;
+    text-align: left;
+    margin-top: 18px;
+    
+
+    /* margin-right: 3; */
+}
+.key_title{
+    font-size: 30px;
+    text-align: center;
+    margin-top: 4%;
+    font-weight: 700;
+    color: #193C6B  !important;
+    line-height: 1.3em;
+
+}
+.Cloud-Capacity-Optimization{
+    font-size: 16px;
+}
+.content-procurement{
+    font-size: 16px;
+
+}
+.OptiCos_Was_Built{
+    
+    text-align:center; 
+    margin-top:3%;
+    font-weight:700;
+    color: #193C6B !important;
+    font-size: 30px;
+
+}
+.h2{
+    text-align: center;
+}
+.card_content{
+    text-align: center;
+}
+.Intelligent_cloud{
+    color:#193C6B  !important ;
+    font-size: 20px;
+}
+.card-body{
+    font-size: 16px;
+}

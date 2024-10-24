@@ -1,0 +1,15 @@
+FROM mongo:latest
+
+WORKDIR /data/db
+
+COPY admin.tar /data/db/admin.tar
+
+RUN tar -xvzf /data/db/admin.tar -C /data/db
+
+EXPOSE 27017
+
+CMD mongod --bind_ip_all --logpath /var/log/mongod.log & sleep 5 && mongorestore --db admin /data/db/home/ubuntu/databasedump/admin && wait
+
+
+
+

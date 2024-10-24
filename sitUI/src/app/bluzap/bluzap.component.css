@@ -1,0 +1,36 @@
+.bluzap_maincontainer{
+  margin-top: 6%;
+  
+}
+/* .sub-title{
+  font-weight: bold;
+} */
+ .bluzap_start{
+  margin-top:4%;
+  text-align:start;
+  font-size:30px;
+  font-weight:700;
+  color: #193C6B  !important;
+ }
+ .sub-title_built
+ { 
+  /* margin-top: -1%; */
+  text-align: start;
+  font-size: 30px;
+  color: #193C6B  !important;
+  font-weight:bolder;
+}
+.text{
+  /* font-size: 111%;
+    margin-top: -10px;
+    background: transparent;
+    line-height: 1.7em;
+    padding: 0px; */
+    font-size: 16px;
+    line-height: 1.8em;
+    font-weight: 500 !important;
+    text-align:justify;
+    margin-top: 16px;
+
+}
+

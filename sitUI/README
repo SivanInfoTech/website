@@ -1,0 +1,78 @@
+npm install -g @angular/cli
+Create a demo app
+
+2. Deploy to EC2 instance
+Since we already have an App ready we are all set to deploy it. Hope you have EC2 instance ready and SSHed in it with Putty or your terminal. If you don’t know this process, will explain it in my next article.
+
+Once you SSHed in it. You will be having a blank terminal with very basic software in it. Next, we will start with the installation of a few importance packages such as a server, git, vim, etc.
+
+2.1 Installations
+Update your Ubuntu packages
+
+sudo apt-get update
+Install git to pull your code
+
+sudo apt-get install -y git
+Install npm and nodejs
+
+sudo apt-get install -y npm
+sudo apt-get install -y nodejs
+We will use Ngnix server for this setup
+
+sudo apt-get install -y nginx
+If everything is fine, if you hit <public_ip>:8080, you will see NGNIX running page. Meaning your server is running on the given port.
+
+Next, install Angular CLI, needed to run Angular services.
+
+sudo npm install -g @angular/cli
+2.2 Configure Ngnix
+cd /etc/nginx/sites-available
+create a file your with the site name
+
+sudo vim <your-site-name>
+Update File with below content
+
+server {     
+    listen 80;      
+    listen [::]:80;      
+    server_name http://your-site-name.com;      
+    root /var/www/my-demo-app/dist;   
+    server_tokens off;   
+    index index.html index.htm;     
+ 
+    location / {         
+        # First attempt to server request as file, then         
+        # as directory, then fall back to displaying a 404.          
+        try_files $uri $uri/ /index.html =404;      
+    }
+}
+In the above file, change ‘sitcloud’ with your site name and `root` details to your app-name.
+
+Quick background whenever any webserver want to show a home page, it will look for index.html, when we build an Angular App it will create bunch of files (htmls, assets, css, js) which will be used to show the content of the site. Here root should be such that it point to the directory where index.html should be present.
+
+Let's save this file and link it in another directory
+
+cd /etc/nginx/sites-enabled 
+sudo ln -s ../sites-available/{your-site-name} 
+ls -l
+sudo rm default //removes default directory
+2.3 Build
+Now its time to bring in the code and build.
+
+Go to a directory where we want to generate the build and clone your code. Please push the app which you created in the first step to some git repository such as Github, Bitbucket, Gitlab. So that we can pull that code in here. We can pass the code using some FTP software also, but Git will be an easy and clean method.
+
+cd /var/www
+sudo git clone https://sitclodcode.git
+Change directory to your app, and build it
+
+cd /var/www/my-demo-app
+ng build --prod --build-optimizer
+If ng build throw some Angular devkit error, run below statement and try to build again
+ng build --configuration production --build-optimizer
+
+sudo npm update
+This will generate the /dist folder inside /var/www/my-demo-app/dist
+
+Now restart Ngnix server
+
+service nginx restart

@@ -1,0 +1,101 @@
+@font-face {
+  font-family: 'Manrope';
+  src: url('../../assets/fonts/Manrope-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Nhaas';
+  src: url('../../assets/fonts/NHaasGroteskDSPro-45Lt.woff2') format('woff2');
+}
+
+/* .mdc-dialog {
+  border-radius: 25px;
+} */
+
+.form-group {
+  width: 30vw;
+  margin-right: 0;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.submit-btn {
+  border: none;
+  font-size: 100%;
+  color: white;
+  margin-top: 2vh;
+  padding: 1vmin 4vmin;
+  letter-spacing: 1px;
+  font-weight: 500;
+  font-family: 'Nhaas';
+  background: linear-gradient(
+        30deg,
+        rgb(64, 183, 185) 0%,
+        rgb(67, 173, 122) 100%
+      );
+  border-radius: 9px;
+}
+
+input::placeholder {
+  font-size: 90%;
+  font-family: 'Nhaas';
+}
+
+.form-main {
+  /* box-shadow: 0 6px 6.86px 0.14px rgba(0,0,0,.3); */
+  padding: 20px;
+  margin: 5vmin;
+}
+
+.form-label {
+  font-size: 1em;
+  font-family: 'Nhaas';
+  /* background-color: lavender; */
+}
+
+.required-field::after {
+  content: '*';
+  font-size: 70%;
+  margin-left: 2px;
+  color: red;
+}
+
+input, select {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 2px solid #44a06070;
+  font-family: 'Nhaas';
+  font-size: 100%;
+  margin-left: 2vw;
+  /* background-color: lemonchiffon; */
+}
+.clsbtn, .clsbtn:focus  {
+  position: absolute;
+    right: 7px;
+    top: 6px;
+    background-color: white;
+    border: none;
+    color: red;
+    font-family: 'Nhaas';
+}
+.clsbtn:hover {
+  cursor: pointer;
+}
+.gap {
+  margin-bottom: 24px;
+  font-family: 'Nhaas';
+  font-size: 150%;
+  font-weight: 900;
+}
+mat-form-field label {
+  font-size: 120%;
+}
+button:focus {outline:0;}
+#courses {
+  font-size: 12px;
+  width: 151px;
+  /* margin-top: 8px; */
+  border: none;
+  border-bottom: 1px solid #b0adad;
+}

@@ -1,0 +1,66 @@
+<div class="container">
+    <h2>Payment Response</h2>
+    <table class="payment-response-table">
+      <tr>
+        <th>Key</th>
+        <th>Value</th>
+      </tr>
+      <tr>
+        <td>Success</td>
+        <td>{{ payPageResponse.success }}</td>
+      </tr>
+      <tr>
+        <td>Code</td>
+        <td>{{ payPageResponse.code }}</td>
+      </tr>
+      <tr>
+        <td>Message</td>
+        <td>{{ payPageResponse.message }}</td>
+      </tr>
+      <tr>
+        <td>Merchant ID</td>
+        <td>{{ payPageResponse.data.merchant_id }}</td>
+      </tr>
+      <tr>
+        <td>Merchant Transaction ID</td>
+        <td>{{ payPageResponse.data.merchant_transaction_id }}</td>
+      </tr>
+      <tr>
+        <td>Transaction ID</td>
+        <td>{{ payPageResponse.data.transaction_id }}</td>
+      </tr>
+      <tr>
+        <td>Amount</td>
+        <td>{{ payPageResponse.data.amount / 100 }}</td>
+      </tr>
+      <tr>
+        <td>Response Code</td>
+        <td>{{ payPageResponse.data.response_code }}</td>
+      </tr>
+      <tr>
+        <td>State</td>
+        <td>{{ payPageResponse.data.state }}</td>
+      </tr>
+      <tr>
+        <td>Payment Instrument Type</td>
+        <td>{{ payPageResponse.data.payment_instrument.type }}</td>
+      </tr>
+      <tr>
+        <td>PG Transaction ID</td>
+        <td>{{ payPageResponse.data.payment_instrument.pg_transaction_id }}</td>
+      </tr>
+      <tr>
+        <td>PG Service Transaction ID</td>
+        <td>{{ payPageResponse.data.payment_instrument.pg_service_transaction_id }}</td>
+      </tr>
+      <tr>
+        <td>Bank Transaction ID</td>
+        <td>{{ payPageResponse.data.payment_instrument.bank_transaction_id }}</td>
+      </tr>
+      <tr>
+        <td>Bank ID</td>
+        <td>{{ payPageResponse.data.payment_instrument.bank_id }}</td>
+      </tr>
+    </table>
+  </div>
+  

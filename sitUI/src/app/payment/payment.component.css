@@ -1,0 +1,50 @@
+.container {
+    max-width: 900px;
+    /* margin: 20px auto; */
+    padding: 20px;
+    /* border: 1px solid #434141; */
+    border-radius: 5px;
+    margin-top: 10%;
+    margin-bottom: 7%;
+    background-color: #FFFFFF;
+  }
+  
+  .price-card,
+  .other-payments {
+    border: 0.2px solid #eee9e9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgb(150, 150, 150);
+    background-color: white;
+  }
+  
+  .price-card h2,
+  .other-payments h2 {
+    margin-top: 0;
+  }
+  
+  .price-card button,
+  .other-payments button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+  
+  .other-payments label {
+    display: block; /* Make labels on separate lines */
+    margin-bottom: 5px;
+  }
+  
+  .other-payments input[type="text"],
+  .other-payments input[type="number"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px; /* Add space between inputs */
+  }
+  

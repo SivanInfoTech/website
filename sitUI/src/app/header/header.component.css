@@ -1,0 +1,215 @@
+.contacts {
+    background-color: #eceb98;
+    color: black;
+    box-sizing: border-box;
+    padding: 7px 0px 6px 0px;
+    /* font-family: "Roboto", Sans-serif; */
+}
+
+:host {
+    width: 100%;
+}
+
+.contactdetail {
+    padding-left: 7px;
+    margin-right: 22px;
+}
+
+.mat-mdc-list-item {
+    width: auto;
+}
+
+.header {
+    /* margin-top: 3vh; */
+    /* margin-bottom: 4%; */
+    box-shadow: 0 4px 5px rgba(0, 0, 0, .25);
+    width: 100vw;
+    overflow-x: hidden;
+    /* box-shadow: 0 2px 4px rgba(0,0,0,.08), 0 4px 12px rgba(0,0,0,.08); */
+   position: absolute;
+   top: 0vh;
+   left: 0;
+   z-index: 2;
+    
+}
+
+.icon_size {
+    font-size: 20px;
+}
+
+.contactdata {
+    display: flex;
+    margin: auto;
+    width: 80%;
+    font-size: 12px;
+}
+
+.contactdata mat-icon {
+    vertical-align: middle;
+}
+
+.logo {
+    width: 6vw;
+    margin-bottom: 3vh;
+    padding-top: 6px;
+    margin-left: 5vw;
+}
+
+.tabs {
+    width: 77%;
+    margin-top: 5vh;
+}
+
+.content {
+    /* background-color: #82baf3; */
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.mat-menu-trigger {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.coursebtn,
+.coursebtn:active,
+.coursebtn:focus {
+    width: 10vw;
+    height: 8vh;
+    padding-left: 17px;
+    color: #0c0b0b;
+    font-size: 100%;
+    font-weight: 600;
+    border: none;
+    background: none;
+
+   
+    /* background: linear-gradient(to right,  #bad8f5,#bad8f5)!important; */
+    /* background: linear-gradient(to right, #B24592, #F15F79); */
+    align-items: center;
+    justify-content: center;
+    /* animation: couseButtonAnimation 3s forwards alternate infinite; */
+    /* border-radius: 25px; */
+
+}
+
+mat-list.mat-mdc-list.mat-mdc-list-base.mdc-list.list-horizontal {
+    justify-content: space-around;
+    flex-direction: row;
+    display: flex;
+    /* font-family: "Lato", Sans-serif; */
+    font-size: 15px;
+    /* margin-left: 7vw; */
+    /* padding-top: 5vh; */
+    font-weight: 700;
+    /* margin-top: 15vh; */
+    color: #374660;
+    padding: 0px 15px 0px 15px;
+}
+
+.matnav {
+    width: 86%;
+    margin-left: 3%;
+    /* position: absolute;
+    bottom: 38px;
+    right: 13%; */
+}
+
+.socialmedia {
+    margin-left: 35px;
+}
+::ng-deep .mdc-list-item .mdc-list-item {
+    /* font-size: -8px !important; */
+    font-size: 10px !important;
+}
+
+.is-active {
+    background-color: red;
+}
+
+.btn {
+    background-color: white;
+    border: none;
+    /* font-family: "Lato", Sans-serif; */
+    font-size: 13px;font-weight: 500;
+    text-transform: uppercase;
+    font-size: 95%;
+    border-radius: 0;
+    padding: 0;
+    margin-right: 2vw;
+    font-weight: 600;
+
+}
+
+.btn_option {
+    background-color: white;
+    border: none;
+    /* font-family: "Lato", Sans-serif; */
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+::ng-deep .mat-mdc-menu-panel {
+    padding: 0 0px !important;
+    width: 100% !important;
+    font-size: 10px;
+}
+
+.mat-mdc-menu-item.mdc-list-item {
+    min-height: 29px;
+}
+::ng-deep .mat-mdc-menu-item.mdc-list-item span {
+    font-size: 10px;
+}
+.btn:hover {
+    /* color: #81B94C; */
+    cursor: pointer;
+}
+.btn:focus{
+    /* border: 2px solid #eaede1 !important; */
+    background:#5db924d9 !important;
+    color: white !important;
+    /* box-shadow:#3eafaf !important; */
+    padding: 5px 12px;
+    border-radius: 3px;
+    border: none;
+    box-shadow: none;
+}
+
+
+
+.bg-transaprent{
+    background-color: inherit;
+    color:#0c0b0b !important;
+}
+
+@media (max-width: 768px) {
+    .logo {
+        width: 20vw;
+        margin-bottom: 1vh;
+        margin-left: 5vw;
+    }
+    .cdk-overlay-pane {
+        width: 75vw;
+        /* background-color:aqua; */
+    }
+}
+
+.active {
+    background-color:#5db924d9; /* Active background color */
+    /* color: #c72828; Active text color */
+  }
+  
+  /* Style for hover effect */
+  button[mat-menu-item]:hover {
+    background-color:#5db924d9; /* Hover background color */
+    /* color: #bd1212; Hover text color */
+  }
+  
+  /* Additional hover effect for course button */
+  .coursebtn:hover {
+    background-color:#5db924d9; /* Background color when hovering over the course button */
+  }
