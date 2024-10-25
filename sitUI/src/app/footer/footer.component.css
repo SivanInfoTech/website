@@ -187,3 +187,11 @@
         vertical-align: middle;
     }
 }
+@media(max-width: 600px) {
+    .Usefullinks{
+        margin-left: 0;
+    }
+    .logo{
+        margin-top: 104px;
+    }
+}

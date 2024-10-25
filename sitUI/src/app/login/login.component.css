@@ -114,7 +114,7 @@ label#tag {
 /* mobile */
 @media (max-width: 768px) {
     .login-page {
-        margin-top: 15vh;
+        margin-top: 18vh;
     }
 
     .login-image {
@@ -145,4 +145,23 @@ label#tag {
 .forgot_link{
     color: rgb(32 32 241) !important;
     cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .login-page{
+       
+        margin-left: 0px;
+        min-height: 90vh;
+        align-items: center;
+
+    }
+}
+@media screen and (max-width: 1300px) {
+    .login-page{
+       
+        margin-left: 0px;
+        min-height: 90vh;
+        align-items: center;
+
+    }
 }

@@ -458,10 +458,27 @@ marquee {
     padding: 15px 20px;
     width: 50vw;
   }
+}
+
+@media screen and (max-width: 1024px){
+  
+    .homeButtons {
+     margin-top: 2vh;
+      margin-bottom: -7vh;
+      display: flex;
+      justify-content: center;
+    }
+}
+@media screen and (max-width: 768px)  /* ////////0px to 768px//////// */
+ {  
   .homeButtons {
+   margin-top: 2vh;
+    margin-bottom: -7vh;
+    display: flex;
     justify-content: center;
   }
 }
+
 
 @media (max-height: 768px) {
   .btn {
@@ -1399,7 +1416,19 @@ p {
   justify-content: center;
   align-items: center;
 }
-
+@media(max-width: 600px) {
+  .enquireformpannelclass{
+    width: 80vw !important;
+  }
+  }
+  .enquireformpannelclass{
+    width: 40vw;
+  
+  }
+  .bub{
+  display: flex !important;
+  justify-content: space-evenly !important;
+  }
 
 
 

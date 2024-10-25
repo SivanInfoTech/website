@@ -31,8 +31,8 @@ export class HomeComponent implements OnInit {
 
   cardTags= ['Security', 'Mobility', 'Provisioning', 'Automation', 'Cost', 'Scalability', 'Customizable', 'Elasticity',  'Resilience', 'Availability', 'Opex', 'Backup']
 
-
-  flashads = ['Free AWS certification training , 50% off on Azure certification training , New advanced modules added in Python curriculum']
+  flashads:any=[]
+  // flashads = ['Free AWS certification training , 50% off on Azure certification training , New advanced modules added in Python curriculum']
   classRoomTimeId = 0
   whypoints = ["Sivan Info Tech which is primarily focused on cloud computing & leading technology training such as Kubernetes and Cloud Accelerator development. So, the students can be hired by us for our cloud products development.",
     "SIT is not only concentrating on delivering the theory & practical sessions, but we will also sit along with the candidate and mould him/her from the scratch such as resume preparation, guiding on uploading it in leading job portal.",
@@ -156,7 +156,7 @@ whyCloudDataList:any=[
     // Laptop
     else {
       let offsetHeight = document.documentElement.clientHeight * 0.3;
-      let thresholdHeight = this.leftSection1Ref.nativeElement.getBoundingClientRect().height + offsetHeight;
+      let thresholdHeight = this.leftSection1Ref?.nativeElement.getBoundingClientRect().height + offsetHeight;
       let scrollingBottom = this.pinsectionBreakPoint.nativeElement.getBoundingClientRect().bottom ;
 
       if(scrollingBottom <= thresholdHeight){
@@ -425,7 +425,8 @@ const chars = ourText.chars
 
   openenquiryform() {
     this.enquiryref = this.dialog.open(EnquiryComponent, {
-      width: '40vw',
+      panelClass: 'enquireformpannelclass',
+      
       data: { ispopup: true }
     });
   }
@@ -446,7 +447,7 @@ const chars = ourText.chars
       let adsdata = res;
       if(adsdata.details && adsdata.details.flashadslist && adsdata.details.flashadslist.length > 0) {
         adsdata.details.flashadslist.forEach((add:any,index:any) => {
-          this.flashads.push(this.flashads + add[0].adsTitle + " " + add[0].adsContent + "  .  ");
+          this.flashads.push(this.flashads + add.adsTitle + " " + add.adsContent + "  .  ");
         })
         console.log(this.flashads,"abcd")
         console.log( adsdata.details.flashadslist)

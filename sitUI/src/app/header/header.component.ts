@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit {
   @ViewChild('menuTrigger') trigger: MatMenuTrigger
   @ViewChild('menuTrigger1') trigger1: MatMenuTrigger
   enquiryref: MatDialogRef<VerifycertComponent>;
-  courselist = ['AWS', 'Azure', 'Kubernetes', 'Python']
+  courselist = ['AWS', 'Azure','GCP' ]//  need to enable in future kubernetes,python
   
   constructor(
     private userService: UserService,
