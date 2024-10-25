@@ -14,12 +14,13 @@ from email import encoders
 
 
 def sendverificationmail(request, VERIFICATION_SECRET_KEY):
-    server = smtplib.SMTP_SSL('smtp-mail.outlook.com', 465)
+    server = smtplib.SMTP('smtp-mail.outlook.com', 587)
     server.ehlo()
-    server.login("info@sitcloud.in", "dlstmcxhbyrltndf")
+    server.starttls()
+    server.login("info@sitcloud.in", "skzvqzjnrcbrfznn")
 
     sender_email = "info@sitcloud.in"
-    receiver_email = request.json["firstName"]
+    receiver_email = request.json["email"]
     message = MIMEMultipart()
     message["Subject"] = "Test SIT Registration verification link"
     message["From"] = sender_email
@@ -29,7 +30,7 @@ def sendverificationmail(request, VERIFICATION_SECRET_KEY):
         'exp': datetime.utcnow() + timedelta(minutes=30)
     }, VERIFICATION_SECRET_KEY)
     # convert both parts to MIMEText objects and add them to the MIMEMultipart message
-    confirm_url = "https://sitcloud.in:8082/verify?token=" + token
+    confirm_url = "https://sitcloud.in/api/verify?token=" + token
     body = """\
             <html>
               <head></head>
@@ -48,9 +49,10 @@ def sendverificationmail(request, VERIFICATION_SECRET_KEY):
 
 
 def sendenquirymail(request):
-    server = smtplib.SMTP_SSL('smtp-mail.outlook.com', 465)
+    server = smtplib.SMTP('smtp-mail.outlook.com', 587)
     server.ehlo()
-    server.login("info@sitcloud.in", "dlstmcxhbyrltndf")
+    server.starttls()
+    server.login("info@sitcloud.in", "skzvqzjnrcbrfznn")
 
     sender_email = "info@sitcloud.in"
     receiver_email = "info@sitcloud.in"
@@ -99,6 +101,6 @@ def sendcertmail(request):
     server = smtplib.SMTP("smtp-mail.outlook.com:587")
     server.ehlo()
     server.starttls()
-    server.login("info@sitcloud.in", "dlstmcxhbyrltndf")
+    server.login("info@sitcloud.in", "skzvqzjnrcbrfznn")
     server.sendmail(message['From'], message['To'], message.as_string())
     server.quit()

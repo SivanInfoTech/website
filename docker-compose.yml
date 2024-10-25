@@ -12,6 +12,9 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=sitadmin
     networks:
       - my-network
+    volumes:
+      - /data:/data/db
+    
 
   mongo-express:
     image: sivaninfotech/sit:sit-mongo-express-latest
@@ -30,7 +33,7 @@ services:
       - my-network
 
   frontend:
-    image: sivaninfotech/sit:situi-frontend-latest
+    image: sivaninfotech/sit:sit-frontend-latest
     container_name: frontend
     ports:
       - "4200:4200"
@@ -51,7 +54,18 @@ services:
       - mongo
     networks:
       - my-network
-  nginx:
+
+  simmacgc:
+    image: sivaninfotech/simmacgc:simmacgc-website-latest
+    container_name: backend
+    ports:
+      - "8083:8083"
+      - "80:80"
+    restart: unless-stopped
+    networks:
+      - my-network
+
+  nginx-reverse-proxy:
     image: sivaninfotech/sit:sit-nginx-latest
     container_name: nginx
     ports:
@@ -62,11 +76,11 @@ services:
     depends_on:
       - frontend
       - backend
+      - simmacgc
     networks:
       - my-network
     volumes:
       - ./opt/nginx/logs:/var/log/nginx       
-      - ./opt/nginx/certificates:/etc/letsencrypt
 
 networks:
   my-network:

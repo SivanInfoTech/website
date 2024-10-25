@@ -37,7 +37,7 @@ export class VerifycertComponent implements OnInit {
     this.verificationDetails = {
       status: 200,
       Message: 'Verified Certification',
-      userName: 'arun',
+      userName: 'sit',
       enrollmentDetails: {
           courseID: 'AWS',
           certifiedOn: '31.12.2023',
