@@ -61,7 +61,9 @@
          
         <mat-list-item>
         <button class="coursebtn" (mouseenter)="openMyMenu()">
-            <div #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="courses"><span style="display: flex;align-items: center;"><span >COURSES</span><mat-icon>keyboard_arrow_down</mat-icon></span></div>
+            <div #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="courses">
+              <span class="course">
+                <span >COURSES</span><mat-icon>keyboard_arrow_down</mat-icon></span></div>
           </button>
           <mat-menu #courses="matMenu" class="customize">
             <span (mouseleave)="closeMyMenu()">

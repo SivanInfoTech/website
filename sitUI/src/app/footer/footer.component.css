@@ -145,11 +145,28 @@
     background-color: #ccc; /* Example background color */
 }
 
+@media(max-width: 1024px){
+.heading{
+    height: 13vh;
+}
+.head{
+    height: 14vh;
+}
+}
+@media(max-width: 900px){
+    .heading{
+        height: 7vh;
+    }
+    .head{
+        height: 7vh;
+    }
+    }
 
 @media(max-width: 768px) {
     .footer {
         justify-content: left;
         margin-top: 15vh;
+        
     }
     .footer-border-left::after {
         height: 0;
@@ -185,6 +202,9 @@
     }
     mat-icon {
         vertical-align: middle;
+    }
+    .heading{
+        height: 8vh;
     }
 }
 @media(max-width: 600px) {

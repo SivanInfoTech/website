@@ -111,6 +111,15 @@ label#tag {
    
 }
 
+.text-center{
+    display: flex;
+    justify-content:space-between;
+}
+
+
+
+
+
 /* mobile */
 @media (max-width: 768px) {
     .login-page {
@@ -129,10 +138,17 @@ label#tag {
 
     .btn-login {
         font-size: 120%;
-        padding: 3vmin 8vmin;
+        /* padding: 3vmin 8vmin; */
+    }
+    .btn{
+        padding: 5px !important;
     }
     .register-link {
         font-size: 100%;
+    }
+    .pass-name{
+        display: flex;
+        justify-content:center
     }
 
 }  
@@ -155,6 +171,13 @@ label#tag {
         align-items: center;
 
     }
+    .text-center{
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+    }
+    
+
 }
 @media screen and (max-width: 1300px) {
     .login-page{
@@ -163,5 +186,18 @@ label#tag {
         min-height: 90vh;
         align-items: center;
 
+    }
+    .text-center{
+        display: flex;
+        justify-content: space-between;
+        gap: 11px;
+    }
+   
+    .btn{
+        padding: 11px;
+    }
+    .pass-name{
+        display: flex;
+        justify-content: center;
     }
 }

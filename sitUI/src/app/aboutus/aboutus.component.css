@@ -467,7 +467,7 @@ background-size: 20px 20px;
     /* height: 130px; */
     /* box-shadow: 4px 4px 8px rgba(195, 53, 220, 0.2); */
     max-width: 22vw;
-    height: 70vh !important;
+    /* height: 70vh !important; */
     padding: 3vh;
     /* box-shadow:  0.2vmin 0.2vmin  rgba(40, 196, 235, 0.56), 5px 0 50px rgba(132, 233, 189, 0.5); */
     border-radius: 10px;
@@ -511,6 +511,9 @@ background-size: 20px 20px;
     width: 4vh;
 }
 
+.about-data-card-one{
+    margin-top:-10vmin;
+}
 .registered-info{
     font-size: 85%;
     width: 50vh;
@@ -519,15 +522,27 @@ background-size: 20px 20px;
     letter-spacing: 1px;
     word-spacing: 3px;
 }
+.about-us-header{
+    font-size: 2.5rem
+}
 
-
-@media(max-width:1368px){
+@media(max-width:1280px){
     .my-card{
-        height: 50vh;
-        
+        height: auto;
+        max-width: 24vw ;
+        padding: 20px !important;
 
-        
     }
+    .about-us-header{
+        font-size: 2rem
+    }
+    .about-data-card{
+        height: 61vmin;
+    }
+   
+
+   
+
 }
 
 
@@ -538,8 +553,35 @@ background-size: 20px 20px;
             overflow-x: hidden;
             padding: 20px;
         }
-    
-
+        .about-data-card-one{
+            margin-top:5.5vmin;
+        }
+        
+        .about-data-card{
+            /* height: 60vmin; */
+            height: auto;
+        }
+        .data1{
+            margin-top:5vmin !important;
+        }
+        .acc_boxes{
+            padding: 15px !important;
+            height: auto !important;
+        }
+        .acc-img{
+            text-align: center;
+            margin-top: 0 !important;
+           
+        }
+        /* .acc-images {
+            height: 10vh;
+            margin-top: 0 !important;
+        } */
+        /* .acc-images{ */
+            /* height: 26vh; */
+           /* margin-top: -8vh; */
+        /* margin-left: 6vmin; */
+        /* } */
 
     .images {
         /* margin-left: 20vw; */
@@ -569,7 +611,7 @@ background-size: 20px 20px;
         margin-bottom: 5vh;
         padding: 3vw;
         height: fit-content;
-        min-height: 35vh;
+        min-height: auto !important;
         /* 35 */
     }
 
@@ -585,7 +627,7 @@ background-size: 20px 20px;
 
     .testimonials{
         margin-bottom: 10vh;
-        margin-left: 5%;
+        margin-left: 0 !important;
     }
 
     .testimonials-title{
@@ -623,20 +665,40 @@ background-size: 20px 20px;
 /* .sivaninfocard{
     margin-top: 7%;
 } */
-/* @media(max-width: 1024px) {
-    .sivaninfocard{
-        margin-top: 20%;
+/* @media(max-width: 1285px) {
+    .about-data-card{
+       height: 61vmin !important;
     }
     } */
+
+
+     .data1{
+        margin-top: -10vmin;
+     }
+
+
+
     @media only screen and (min-width: 768px) and (max-width: 1024px) {
-        .about-data-card{
-            height: 60vmin;
-        }
+        
         .my-card{
-            min-height: 110vmin;
-            max-height:110vmin ;
+            /* min-height: 110vmin;
+            max-height:110vmin ; */
+            height: auto !important;
+            
         }
+         .acc-images{
+        height: 10vh !important ;
+        /* margin-top: 0 !important; */
     }
+    .about-data-card{
+         height: 69vmin;
+    }
+    .acc-img{
+        margin-top: 0vh !important;
+    }
+        
+    }
+
     /* @media only screen and (min-width: 800px) and (max-width: 1368px) {
         .about-data-card{
             height: 50vmin;
@@ -651,8 +713,8 @@ background-size: 20px 20px;
         box-shadow: 0px 0px 5px rgb(150, 150, 150);
         border: none;
         width: 100%;
-        height: 190px;
-        padding: 55px 0px 0px 32px !important;
+        /* height: 190px; */
+        padding: 55px 0px 0px 32px;
         margin: 0;
         text-align: justify;
     
@@ -663,7 +725,7 @@ background-size: 20px 20px;
     .acc_boxes1{
         margin-top: 12px !important;
         width: 100%;
-        height: 217px;
+        height:35vh !important;
         margin: 0;
         text-align: justify;
         background-color: #ffffff;
@@ -672,9 +734,14 @@ background-size: 20px 20px;
     }
 
     .acc-images{
-        height: 26vh;
-    margin-top: -8vh;
+        height: 20vh ;
     /* margin-left: 6vmin; */
+    }
+    .acc-img{
+       
+        display: flex ;
+    justify-content: center;
+    margin-top: -5vh;
     }
     .marq{
         margin-bottom: 50px;

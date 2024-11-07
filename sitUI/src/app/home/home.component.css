@@ -215,6 +215,7 @@
       font-size: 100%;
       margin-bottom: 22px;
     }
+    
   }
   
   @keyframes typing {
@@ -421,6 +422,9 @@ marquee {
     margin-top: 5vh;
     justify-content: start;
 }
+.box-text{
+  margin-top: 10vh;
+}
 
 .btn {
   display: flex;
@@ -450,44 +454,64 @@ marquee {
     background-color: transparent;
     font-weight: 600;
 }
-
-@media (max-width: 768px) {
-  .btn {
-    font-size: 110%;
-    margin: 12px;
-    padding: 15px 20px;
-    width: 50vw;
+@media screen and (max-width: 1280px){
+  .homeButtons{
+    margin-top: 0;
+    margin-bottom: 5vh !important;
   }
 }
+
 
 @media screen and (max-width: 1024px){
   
     .homeButtons {
-     margin-top: 2vh;
-      margin-bottom: -7vh;
+     /* margin-top: 2vh; */
+     margin-bottom: 4vh;
       display: flex;
       justify-content: center;
+      flex-wrap: nowrap !important;
     }
+    .box-text{
+      margin-top: 10vh;
+    }
+    
+
 }
+
+
 @media screen and (max-width: 768px)  /* ////////0px to 768px//////// */
  {  
   .homeButtons {
-   margin-top: 2vh;
-    margin-bottom: -7vh;
+   margin-top: 7vh !important;
+    /* margin-bottom: -7vh; */
     display: flex;
-    justify-content: center;
+    justify-content:center;
+    margin-left: 10px;
+    
   }
 }
 
 
-@media (max-height: 768px) {
+/* @media (max-height: 768px) {
   .btn {
     font-size: 85%;
-    /* margin: 12px; */
-    padding: 12px 15px;
-    /* width: 40vw; */
+    padding: 14px 17px;
+  } */
+/* } */
+@media (max-width: 768px) {
+  .btn {
+    
+    /* margin: 15px; */
+    
+    
+    font-size: 110%;
+    padding: 15px 5px;
+    width: 65vw;
+    margin-right: 24px;
   }
 }
+
+
 
 .card-container{
   display: flex;
@@ -1256,11 +1280,11 @@ p {
     font-size: 100%;
   }
 
-  .whyCloudSection{
+  /* .whyCloudSection{
     margin-top: 0;
     padding-top: 20vh;
 
-  }
+  } */
 
   .running-name-box1 {
     justify-content: start;
@@ -1428,7 +1452,22 @@ p {
   .bub{
   display: flex !important;
   justify-content: space-evenly !important;
+  margin: 0;
   }
+
+.bub1{
+  box-shadow: 0px 0px 10px rgb(150, 150, 150);
+  background-color: white;
+  margin-bottom: 16px;
+  border-radius: 15px;
+}
+.bub2{
+display: flex;
+text-align: justify;
+/* padding:15px; */
+padding:40px;
+
+}
 
 
 

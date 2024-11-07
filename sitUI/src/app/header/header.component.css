@@ -110,8 +110,8 @@ mat-list.mat-mdc-list.mat-mdc-list-base.mdc-list.list-horizontal {
 }
 
 .matnav {
-    width: 50%;
-    margin-left:39%;
+    /* width: 50%; */
+    margin-left:35%;
     /* position: absolute;
     bottom: 38px;
     right: 13%; */
@@ -178,6 +178,10 @@ mat-list.mat-mdc-list.mat-mdc-list-base.mdc-list.list-horizontal {
     border: none;
     box-shadow: none;
 }
+.course{
+    display: flex;
+    align-items: center;
+}
 
 
 
@@ -185,17 +189,47 @@ mat-list.mat-mdc-list.mat-mdc-list-base.mdc-list.list-horizontal {
     background-color: inherit;
     color:#0c0b0b !important;
 }
+@media (max-width: 1024px){
+    .matnav{
+        margin-left: 7% !important;
+       
+         }
+    .coursebtn{
+        width: 12vw;
+        padding-left: 0 !important;
+    }
+    .course{
+        width: 12vh;
+    }
+    .logo{
+        width: 8vw !important;
+        padding-top: 30px !important;
+    }
+}
+
+    
+
+
 
 @media (max-width: 768px) {
     .logo {
         width: 20vw;
-        margin-bottom: 1vh;
+        /* margin-bottom: 1vh; */
         margin-left: 5vw;
     }
     .cdk-overlay-pane {
         width: 75vw;
         /* background-color:aqua; */
     }
+    .matnav{
+    width: 80%;
+    margin-inline: -2vh;
+    margin-left: 22px !important;
+    }
+    .coursebtn{
+        width: 20vw;
+    }
+    
 }
 
 .active {
