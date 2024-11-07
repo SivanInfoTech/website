@@ -46,10 +46,10 @@
             </div>
             <div class="row batch-selector-row">
                 <label for="courses" class="select-btach-label">Choose a batch</label>
-                <select name="batche" id="courses" [(ngModel)]="batchtoenroll">
-                    <option value="" [disabled]="true" selected> Select Batch</option>
+                <select  name="batche" id="courses" [(ngModel)]="batchtoenroll">
+                    <option value="" [disabled]="true" selected > Select Batch</option>
                     <option *ngFor="let i of selectedcoursedetails.batches" [ngValue]="i">{{i.startdate}} -
-                        {{i.enddate}}</option>
+                        {{i.enddate}}</option>S
                 </select>
                 <div class="centering-button">
                     <button class="enroll-button"

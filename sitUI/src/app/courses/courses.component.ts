@@ -113,7 +113,7 @@ export class CoursesComponent implements OnInit {
         this.courseid = params.id;
         this.courseService.getcoursedetails(this.courseid).subscribe((res: any) => {
           this.selectedcoursedetails = res.details
-          this.batchtoenroll = this.selectedcoursedetails.batches[0]
+          this.batchtoenroll = this.selectedcoursedetails.batches[3]
           this.skillSet1 = this.selectedcoursedetails.skillscovered.slice(0, this.selectedcoursedetails.skillscovered.length/2);
           this.skillSet2 = this.selectedcoursedetails.skillscovered.slice(this.selectedcoursedetails.skillscovered.length/2);
         })
