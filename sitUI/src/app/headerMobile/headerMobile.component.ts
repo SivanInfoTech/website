@@ -23,7 +23,7 @@ export class HeaderMobileComponent implements OnInit {
   @ViewChild('menuTrigger1') trigger1: MatMenuTrigger
   enquiryref: MatDialogRef<VerifycertComponent>;
   
-  courselist = ['AWS', 'Azure', 'Kubernetes', 'Python']
+  courselist = ['AWS', 'Azure', 'GCP']
   constructor(
     private userService: UserService,
     private toastr: ToastrService,

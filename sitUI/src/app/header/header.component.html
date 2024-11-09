@@ -68,7 +68,7 @@
           <mat-menu #courses="matMenu" class="customize">
             <span (mouseleave)="closeMyMenu()">
               <button mat-menu-item *ngFor="let course of courselist" [routerLink]="['/course']"
-                [queryParams]="{id: course}">{{course}}</button>
+                [queryParams]="{id:course}">{{course}}</button>
             </span>
           </mat-menu>
         </mat-list-item>
@@ -102,8 +102,7 @@
               #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="courses">COURSES</button>
                 <button mat-menu-item 
                  (click)="opencert()">VERIFY CERTIFICATE</button>
-                <button mat-menu-item routerLink="/payment" *ngIf="(currentUser$ | async) == null"
-                >COURSE PAYMENT</button>
+                <button mat-menu-item routerLink="/payment" *ngIf="(currentUser$ | async) == null">COURSE PAYMENT</button>
             <!-- </span> -->
           </mat-menu>
        </mat-list-item>

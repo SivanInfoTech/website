@@ -17,6 +17,9 @@
     <div class="menu-item" (click)="navigateTo('aboutus')">ABOUT US</div>
     <div class="menu-item" (click)="navigateTo('verify')">VERIFY CERTIFICATE</div>
     <div class="menu-item" (click)="navigateTo('register')">REGISTER</div>
+   <div class="menu-item" (click)="navigateTo('payment')">COURSE PAYMENT</div>
+    
+    
     
     <div *ngIf="(currentUser$ | async) == null" class="menu-item" (click)="navigateTo('login')">LOGIN</div>
   </div>
