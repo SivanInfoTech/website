@@ -40,7 +40,7 @@ export class VerifycertComponent implements OnInit {
       userName: 'sit',
       enrollmentDetails: {
           courseID: 'AWS',
-          certifiedOn: '31.12.2023',
+          certifiedOn: '31.12.2025',
           courseTitle: 'AWS Certification'
       }
   }
