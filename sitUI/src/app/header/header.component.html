@@ -61,12 +61,14 @@
          
         <mat-list-item>
         <button class="coursebtn" (mouseenter)="openMyMenu()">
-            <div #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="courses"><span style="display: flex;align-items: center;"><span >COURSES</span><mat-icon>keyboard_arrow_down</mat-icon></span></div>
+            <div #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="courses">
+              <span class="course">
+                <span >COURSES</span><mat-icon>keyboard_arrow_down</mat-icon></span></div>
           </button>
           <mat-menu #courses="matMenu" class="customize">
             <span (mouseleave)="closeMyMenu()">
               <button mat-menu-item *ngFor="let course of courselist" [routerLink]="['/course']"
-                [queryParams]="{id: course}">{{course}}</button>
+                [queryParams]="{id:course}">{{course}}</button>
             </span>
           </mat-menu>
         </mat-list-item>
@@ -76,7 +78,7 @@
         </mat-list-item>
         <!-- 1111111111111 ABOUT US 11111111111111 -->
         <mat-list-item>
-          <button class="btn bg-transaprent" routerLink="/aboutus">AboutUs</button>
+          <button class="btn bg-transaprent" routerLink="/aboutus">About&nbsp;&nbsp;US</button>
         </mat-list-item>
         <!-- <mat-list-item>
           <button class="btn bg-transaprent" routerLink="/cloudacclerator" #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="aboutuslist"> <span style="display: flex;align-items: center;"><span >ABOUTUS</span><mat-icon>keyboard_arrow_down</mat-icon></span></button>
@@ -100,12 +102,11 @@
               #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="courses">COURSES</button>
                 <button mat-menu-item 
                  (click)="opencert()">VERIFY CERTIFICATE</button>
-                <button mat-menu-item routerLink="/payment" *ngIf="(currentUser$ | async) == null"
-                >COURSE PAYMENT</button>
+                <button mat-menu-item routerLink="/payment" *ngIf="(currentUser$ | async) == null">COURSE PAYMENT</button>
             <!-- </span> -->
           </mat-menu>
        </mat-list-item>
-      <!-- ---------------------->
+      <!-- -------------------- -->
       <!-- <mat-list-item>
         <button class="btn bg-transaprent" routerLink="/cloudacclerator">Cloud Accelerators</button>
       </mat-list-item> -->

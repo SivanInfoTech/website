@@ -47,4 +47,28 @@
     border-radius: 3px;
     margin-bottom: 10px; /* Add space between inputs */
   }
+  @media (max-width: 1024px){
+   
+    .aws-payment-card{
+      margin-top: 3vh ;
+
+    }
+  }
+  @media (max-width: 768px){
+    .price-card{
+      height: 25vh !important;
+      padding: 17px;
+      /* margin-top: 65px; */
+    }
+    .aws-payment-card{
+      margin-top: 6vh ;
+
+    }
+  }
+  @media (max-width: 430px){
+    .container{
+      margin-top: 20vh;
+    }
+  }
+
   

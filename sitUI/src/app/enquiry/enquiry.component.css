@@ -8,12 +8,13 @@
   src: url('../../assets/fonts/NHaasGroteskDSPro-45Lt.woff2') format('woff2');
 }
 
+
 /* .mdc-dialog {
   border-radius: 25px;
 } */
 
 .form-group {
-  width: 30vw;
+  /* width: 30vw; */
   margin-right: 0;
   align-items: baseline;
   justify-content: space-between;

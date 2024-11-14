@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 @Component({
-  selector: 'app-aboutus',
+  selector: 'app-abouztus',
   templateUrl: './aboutus.component.html',
   styleUrls: ['./aboutus.component.css'],
 })
