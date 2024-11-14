@@ -189,7 +189,7 @@ label#tag {
     }
     .text-center{
         display: flex;
-        justify-content: space-between;
+        justify-content: end;
         gap: 11px;
     }
    
