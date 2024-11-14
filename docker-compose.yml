@@ -57,15 +57,14 @@ services:
 
   simmacgc:
     image: sivaninfotech/simmacgc:simmacgc-website-latest
-    container_name: backend
+    container_name: simmacgc
     ports:
-      - "8083:8083"
-      - "80:80"
+      - "8083:80"
     restart: unless-stopped
     networks:
       - my-network
 
-  nginx-reverse-proxy:
+  nginx:
     image: sivaninfotech/sit:sit-nginx-latest
     container_name: nginx
     ports:
@@ -80,9 +79,8 @@ services:
     networks:
       - my-network
     volumes:
-      - ./opt/nginx/logs:/var/log/nginx       
+      - ./data/nginx/logs:/var/log/nginx
 
 networks:
   my-network:
     driver: bridge
-
