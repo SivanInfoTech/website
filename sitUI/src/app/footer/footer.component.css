@@ -1,217 +1,233 @@
-
+/* Modern Professional Footer Styles */
 .footer {
-    padding-left: 8%;
-    padding-right: 8%;
-    padding-top: 15vmin;
-    display: flex;
-    padding-bottom: 10vmin;
-    margin-left: 0;
-    height: fit-content;
-    width: 100vw;
-    right: 0;
-    justify-content: space-between;
+    width: 100%;
     position: relative;
-    overflow-x: hidden;
+    background-color: rgb(27, 18, 18);
+    color: #ffffff;
+    overflow: hidden;
+    padding: 4rem 0 2rem;
 }
 
-.slope-bg1{
-    position: absolute;
-    height: 83%;
-     width: 150vw;
-    bottom: 0;
-   
-    left: -30vw;
-    background-image: linear-gradient(200deg, #0e0f0f 1.83%, #0e0f0f 1.83%, #0e0f0f 1.83%);
-     /* background-image: linear-gradient(200deg, #fa5853, #f46692 52%, #ffc444); */
-    border-radius: 1 180% 0 0;
+/* Footer container */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 var(--spacing-lg);
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 1s ease-out forwards;
 }
 
-.Usefullinks {
-    width: 31%;
-    height: 80%;
-    margin-top: 10px;
-    margin-left: 257px;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
+
+/* Logo section */
 .logofoot {
-    width: 35%;
+    width: 25%;
+    margin-bottom: 2rem;
 }
-.content {
-    color: var(--white);
-    font-size: 80%;
-    font-weight: 400;
-    line-height: 26px;
-    width: 88%;
-    height: 80%;
-    /* margin-left: 13px; */
-}
+
 .logo {
-    
-    margin-top: 27px;
-    width: 165px;
-    height: 129px;
+    width: 150px;
+    height: auto;
+    margin-bottom: var(--spacing-md);
 }
-.locationlinks {
-    color: white !important;
-    text-decoration: none;
-    font-size: 13px;
-}
-/* .locationlinks :hover{
-    color: #81B94C !important;
-    text-decoration: none;
-    font-size: 13px;
-} */
-.loclinks{
-    color: white;
-    text-decoration: none;
-    font-size: 13px;
-} 
 
-.head {
-    color:var(--white);;
-    /* font-family: "Lato", Sans-serif; */
-    font-size: 25px;
-    font-weight: 600;
-    height: 50px;
-    margin-left: 3px;
+.content {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: var(--spacing-lg);
 }
-.heading{
-    color:var(--white);;
-    /* font-family: "Lato", Sans-serif; */
-    font-size: 25px;
-    font-weight: 600;
-    height: 51px;
+
+/* Links section */
+.Usefullinks {
+    width: 20%;
+    margin-bottom: 2rem;
 }
-.loc{
-    display: -webkit-box;
-    color: #c4c4c4;
+
+.head, .heading {
+    color: #ffffff;
+    font-family: 'Poppins-SemiBold', sans-serif;
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
 }
-.links{
-    color: white;
+
+.head::after, .heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--secondary-color);
+}
+
+.links {
+    color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
-    font-size: 80%;
-    /* font-family: "Lato", Sans-serif; */
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 0.75rem;
+    transition: var(--transition-default);
+    position: relative;
+    padding-left: 1.25rem;
 }
-/* a:hover {
-    color: #81B94C;
-} */
+
+.links::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.links:hover {
+    color: var(--secondary-color);
+    transform: translateX(5px);
+}
+
+/* Contact details section */
 .contactdetails {
-    /* margin-top: 8vh; */
-    width: 45%;
-    height: 80%;
-    margin-top: 10px;
-
-    /* margin-top: 8vh; */
-}
-
-.contactdetails mat-icon {
-    color:var(--light)e;
-    vertical-align: bottom;
+    width: 30%;
+    margin-bottom: 2rem;
 }
 
 .details {
-    display: grid;
-}
-.details a {
-    color:var(--light);
-}
-/* .contactdetails mat-icon {
-    vertical-align: middle;
-} */
-.contactdetail {
-    padding-bottom: 12px;
-    color:var(--light);
-    vertical-align: bottom;
-}
-
-.small-image {
-    max-width: 40px; /* Set the maximum width of the image */
-    max-height: 40px; /* Set the maximum height of the image */
-}
-
-.ter {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Adjust the space between rows as needed */
+    gap: 1rem;
 }
 
-.row {
+.contactdetail {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.5rem;
 }
 
-.box {
-    width: 100px; /* Adjust the width of boxes as needed */
-    height: 100px; /* Adjust the height of boxes as needed */
-    background-color: #ccc; /* Example background color */
+.contactdetail mat-icon {
+    color: white;
+    font-size: 1.25rem;
+    min-width: 24px;
 }
 
-@media(max-width: 1024px){
-.heading{
-    height: 13vh;
+.locationlinks, .loclinks {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: var(--transition-default);
+    display: flex;
+    align-items: center;
 }
-.head{
-    height: 14vh;
-}
-}
-@media(max-width: 900px){
-    .heading{
-        height: 7vh;
-    }
-    .head{
-        height: 7vh;
-    }
-    }
 
-@media(max-width: 768px) {
-    .footer {
-        justify-content: left;
-        margin-top: 15vh;
-        
-    }
-    .footer-border-left::after {
-        height: 0;
-    }
-    .head {
-        font-size: 150%;
-    }
-    .content {
-        height: fit-content;
-        padding: 2vw;
-        width: 80%;
-        margin-top: 2vh;
-        font-size: 120%;
-    }
-    .Usefullinks {
-        /* order: 4; */
-        height: fit-content;
-        padding: 2vw;
-        margin-top: 2vh;
-        width: 80%;
+.locationlinks:hover, .loclinks:hover {
+    color: var(--secondary-color);
+}
 
+.loc {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Social media icons */
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: var(--transition-default);
+}
+
+.social-icon:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+.social-icon img {
+    width: 16px;
+    height: 16px;
+    filter: brightness(0) invert(1); /* Make icons white */
+}
+
+/* Copyright section */
+.copyright {
+    width: 100%;
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    .logofoot, .Usefullinks, .contactdetails {
+        width: 30%;
     }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+    }
+    
+    .logofoot, .Usefullinks, .contactdetails {
+        width: 100%;
+    }
+    
+    .logo {
+        margin: 0 auto var(--spacing-md);
+        display: block;
+    }
+    
+    .head, .heading {
+        text-align: center;
+    }
+    
+    .head::after, .heading::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
     .links {
-        font-size: 120%;
+        text-align: center;
+        padding-left: 0;
     }
-    .contactdetails {
-        /* order: 3; */
-        height: fit-content;
-        padding: 2vw;
-        padding-bottom: 5vh;
-        margin-top: 2vh;
-        width: 80%;
+    
+    .links::before {
+        display: none;
     }
-    mat-icon {
-        vertical-align: middle;
+    
+    .contactdetail {
+        justify-content: center;
     }
-    .heading{
-        height: 8vh;
-    }
-}
-@media(max-width: 600px) {
-    .Usefullinks{
-        margin-left: 0;
-    }
-    .logo{
-        margin-top: 104px;
+    
+    .social-icons {
+        justify-content: center;
     }
 }

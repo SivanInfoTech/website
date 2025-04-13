@@ -16,6 +16,10 @@ import { VerifycertComponent } from '../verifycert/verifycert.component';
 export class HeaderMobileComponent implements OnInit {
   showModal = false
   expandCourseList = false
+  expandOfferingsList = false
+  expandInternshipList = false
+  expandCloudAcceleratorsList = false
+  expandProjectsList = false
   currentUser$: Observable<User | null>;
 
 
@@ -24,6 +28,9 @@ export class HeaderMobileComponent implements OnInit {
   enquiryref: MatDialogRef<VerifycertComponent>;
   
   courselist = ['AWS', 'Azure', 'GCP']
+  internshipList = ['AWS', 'Azure', 'GCP']
+  cloudAcceleratorsList = ['Terragen2', 'bluzap', 'SxaaS']
+  projectsList = ['cloud managed services']
   constructor(
     private userService: UserService,
     private toastr: ToastrService,
@@ -90,6 +97,41 @@ export class HeaderMobileComponent implements OnInit {
   listCourses() {
     this.expandCourseList = !this.expandCourseList;
   }
+  
+  listOfferings() {
+    this.expandOfferingsList = !this.expandOfferingsList;
+    // Collapse sub-menus when toggling main offerings menu
+    if (!this.expandOfferingsList) {
+      this.expandInternshipList = false;
+      this.expandCloudAcceleratorsList = false;
+      this.expandProjectsList = false;
+    }
+  }
+  
+  listInternships() {
+    this.expandInternshipList = !this.expandInternshipList;
+  }
+  
+  listCloudAccelerators() {
+    this.expandCloudAcceleratorsList = !this.expandCloudAcceleratorsList;
+  }
+  
+  listProjects() {
+    this.expandProjectsList = !this.expandProjectsList;
+  }
+  
+  navigateToOffering(route: string) {
+    switch (route) {
+      case 'terrgen2':
+        this.router.navigate(['/terrgen2']);
+        break;
+      case 'bluzap':
+        this.router.navigate(['/bluzap']);
+        break;
+    }
+    this.toggleModal(false);
+  }
+  
   opencert() {
     this.enquiryref = this.dialog.open(VerifycertComponent, {
       width: '50vw'

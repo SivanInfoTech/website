@@ -59,11 +59,13 @@
       <mat-list class="list-horizontal">
         <!-- need to enable -->
          
-        <mat-list-item>
-        <button class="coursebtn" (mouseenter)="openMyMenu()">
+        <!-- Original COURSES menu item hidden -->
+        <!-- <mat-list-item>
+          <button class="coursebtn" (mouseenter)="openMyMenu()">
             <div #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="courses">
               <span class="course">
-                <span >COURSES</span><mat-icon>keyboard_arrow_down</mat-icon></span></div>
+                <span >COURSES</span><mat-icon>keyboard_arrow_down</mat-icon></span>
+            </div>
           </button>
           <mat-menu #courses="matMenu" class="customize">
             <span (mouseleave)="closeMyMenu()">
@@ -71,7 +73,7 @@
                 [queryParams]="{id:course}">{{course}}</button>
             </span>
           </mat-menu>
-        </mat-list-item>
+        </mat-list-item> -->
        
         <mat-list-item>
           <button class="btn bg-transaprent" routerLink="/home">HOME</button>
@@ -80,6 +82,52 @@
         <mat-list-item>
           <button class="btn bg-transaprent" routerLink="/aboutus">About&nbsp;&nbsp;US</button>
         </mat-list-item>
+        
+        <!-- OFFERINGS DROPDOWN -->
+        <mat-list-item>
+          <button class="btn bg-transaprent" #offeringsTrigger="matMenuTrigger" [matMenuTriggerFor]="offeringsMenu"> 
+            <span style="display: flex;align-items: center;">
+              <span>OFFERINGS</span><mat-icon>keyboard_arrow_down</mat-icon>
+            </span>
+          </button>
+          <mat-menu #offeringsMenu="matMenu" class="customize">
+            <!-- Courses submenu -->
+            <button mat-menu-item [matMenuTriggerFor]="coursesMenu">
+              <span>Courses</span>
+            </button>
+            <mat-menu #coursesMenu="matMenu">
+              <button mat-menu-item *ngFor="let course of courselist" [routerLink]="['/course']"
+                [queryParams]="{id:course}">{{course}}</button>
+            </mat-menu>
+
+            <!-- Internship submenu -->
+            <button mat-menu-item [matMenuTriggerFor]="internshipMenu">
+              <span>Internship</span>
+            </button>
+            <mat-menu #internshipMenu="matMenu">
+              <button mat-menu-item *ngFor="let item of internshipList">{{item}}</button>
+            </mat-menu>
+            
+            <!-- Cloud Accelerators submenu -->
+            <button mat-menu-item [matMenuTriggerFor]="cloudAccMenu">
+              <span>Cloud Accelerators</span>
+            </button>
+            <mat-menu #cloudAccMenu="matMenu">
+              <button mat-menu-item routerLink="/terrgen2">Terragen2</button>
+              <button mat-menu-item routerLink="/bluzap">bluzap</button>
+              <button mat-menu-item>SxaaS</button>
+            </mat-menu>
+            
+            <!-- Projects submenu -->
+            <button mat-menu-item [matMenuTriggerFor]="projectsMenu">
+              <span>Projects</span>
+            </button>
+            <mat-menu #projectsMenu="matMenu">
+              <button mat-menu-item *ngFor="let item of projectsList">{{item}}</button>
+            </mat-menu>
+          </mat-menu>
+        </mat-list-item>
+        
         <!-- <mat-list-item>
           <button class="btn bg-transaprent" routerLink="/cloudacclerator" #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="aboutuslist"> <span style="display: flex;align-items: center;"><span >ABOUTUS</span><mat-icon>keyboard_arrow_down</mat-icon></span></button>
           <mat-menu #aboutuslist="matMenu" class="customize"> -->
@@ -99,7 +147,7 @@
           <mat-menu #serviceslist="matMenu" class="customize">
             <!-- <span (mouseleave)="closeMyMenu()"> -->
               <button mat-menu-item 
-              #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="courses">COURSES</button>
+              #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="coursesMenu">COURSES</button>
                 <button mat-menu-item 
                  (click)="opencert()">VERIFY CERTIFICATE</button>
                 <button mat-menu-item routerLink="/payment" *ngIf="(currentUser$ | async) == null">COURSE PAYMENT</button>

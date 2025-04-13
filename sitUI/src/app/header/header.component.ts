@@ -22,8 +22,12 @@ export class HeaderComponent implements OnInit {
   currentUser$: Observable<User | null>;
   @ViewChild('menuTrigger') trigger: MatMenuTrigger
   @ViewChild('menuTrigger1') trigger1: MatMenuTrigger
+  @ViewChild('offeringsTrigger') offeringsTrigger: MatMenuTrigger
   enquiryref: MatDialogRef<VerifycertComponent>;
   courselist = ['AWS', 'Azure', 'GCP' ]//need to enable in future kubernetes,python
+  internshipList = ['AWS', 'Azure', 'GCP'];
+  cloudAcceleratorsList = ['Terragen2', 'bluzap', 'SxaaS'];
+  projectsList = ['cloud managed services'];
   
   constructor(
     private userService: UserService,
@@ -59,6 +63,12 @@ export class HeaderComponent implements OnInit {
   }
   closeaccmenu() {
     this.trigger1.closeMenu();
+  }
+  openOfferingsMenu() {
+    this.offeringsTrigger.openMenu();
+  }
+  closeOfferingsMenu() {
+    this.offeringsTrigger.closeMenu();
   }
   opencert() {
     this.enquiryref = this.dialog.open(VerifycertComponent, {
