@@ -1,0 +1,28 @@
+#!/bin/bash
+sudo -i
+TAG_KEY="Name"
+TAG_VALUE="sit-prod"  
+AWS_REGION="ap-south-1"  
+EIP_ALLOC_ID="eipalloc-0add4084ef3fb304a"
+
+echo "Waiting 30 seconds before proceeding..."
+sleep 30
+
+INSTANCE_ID=$(aws ec2 describe-instances \
+    --region $AWS_REGION \
+    --filters "Name=tag:$TAG_KEY,Values=$TAG_VALUE" "Name=instance-state-name,Values=running" \
+    --query "Reservations[].Instances[].InstanceId" \
+    --output text)
+
+if [ -n "$INSTANCE_ID" ]; then
+    aws ec2 associate-address \
+            --region $AWS_REGION \
+            --instance-id $INSTANCE_ID \
+            --allocation-id $EIP_ALLOC_ID
+
+    echo "Elastic IP associated"
+else
+    echo "No instance found with tag $TAG_KEY=$TAG_VALUE"
+fi
+
+docker-compose up -d
